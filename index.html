@@ -123,7 +123,7 @@ h2 strong{font-weight:600}
 .si-d{font-size:0.71rem;font-weight:300;color:var(--dim);line-height:1.6}
 .tools{display:flex;flex-wrap:wrap;gap:5px;margin-top:1.4rem}
 .tool{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.05em;color:var(--dim);border:1px solid var(--rule2);padding:0.18rem 0.5rem}
-.chart-card{background:var(--s2);border:1px solid var(--rule2);padding:1.2rem;margin-bottom:1rem}
+.chart-card{background:var(--s2);border:1px solid var(--rule2);padding:1.2rem;margin-bottom:1rem;height:130px;position:relative}
 .cc-l{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-bottom:0.7rem;display:flex;justify-content:space-between}
 .cc-leg{display:flex;gap:0.8rem}
 .cc-li{display:flex;align-items:center;gap:4px;font-family:var(--mono);font-size:0.52rem;color:var(--dim)}
@@ -374,7 +374,7 @@ footer{flex-direction:column;gap:0.6rem;text-align:center}
           <div class="tools"><span class="tool">Python</span><span class="tool">SQL</span><span class="tool">Power BI</span><span class="tool">Tableau</span><span class="tool">dbt</span><span class="tool">BigQuery</span><span class="tool">Snowflake</span><span class="tool">Looker</span></div>
         </div>
         <div>
-          <div class="chart-card"><div class="cc-l"><span>Revenue trajectory &mdash; before vs. after</span><div class="cc-leg"><div class="cc-li"><div class="cc-d" style="background:#00e5cc"></div>With Aegis</div><div class="cc-li"><div class="cc-d" style="background:#333330"></div>Baseline</div></div></div><canvas id="c1" height="80"></canvas></div>
+          <div class="chart-card"><div class="cc-l"><span>Revenue trajectory &mdash; before vs. after</span><div class="cc-leg"><div class="cc-li"><div class="cc-d" style="background:#00e5cc"></div>With Aegis</div><div class="cc-li"><div class="cc-d" style="background:#333330"></div>Baseline</div></div></div><canvas id="c1" style="height:80px;max-height:80px"></canvas></div>
           <div class="fit-box"><div class="fit-l">Best fit if you are</div><p class="fit-t">Making decisions from gut feel or outdated spreadsheets. Preparing for a fundraise and needing clean metrics. Spending hours each week on reports that could run automatically.</p></div>
         </div>
       </div>
@@ -393,7 +393,7 @@ footer{flex-direction:column;gap:0.6rem;text-align:center}
           <div class="tools"><span class="tool">Python</span><span class="tool">PyTorch</span><span class="tool">scikit-learn</span><span class="tool">OpenAI API</span><span class="tool">Hugging Face</span><span class="tool">MLflow</span><span class="tool">AWS SageMaker</span></div>
         </div>
         <div>
-          <div class="chart-card"><div class="cc-l"><span>Model accuracy across training cycles</span><div class="cc-leg"><div class="cc-li"><div class="cc-d" style="background:#00e5cc"></div>Accuracy</div><div class="cc-li"><div class="cc-d" style="background:#f0a500"></div>Target</div></div></div><canvas id="c2" height="80"></canvas></div>
+          <div class="chart-card"><div class="cc-l"><span>Model accuracy across training cycles</span><div class="cc-leg"><div class="cc-li"><div class="cc-d" style="background:#00e5cc"></div>Accuracy</div><div class="cc-li"><div class="cc-d" style="background:#f0a500"></div>Target</div></div></div><canvas id="c2" style="height:80px;max-height:80px"></canvas></div>
           <div class="fit-box"><div class="fit-l">Best fit if you are</div><p class="fit-t">Doing repetitive analysis that patterns could handle. Exploring AI without knowing where to start. Sitting on a prediction problem you are solving manually today.</p></div>
         </div>
       </div>
@@ -412,7 +412,7 @@ footer{flex-direction:column;gap:0.6rem;text-align:center}
           <div class="tools"><span class="tool">Nessus</span><span class="tool">Burp Suite</span><span class="tool">Splunk</span><span class="tool">CrowdStrike</span><span class="tool">AWS Security Hub</span><span class="tool">Zero Trust</span></div>
         </div>
         <div>
-          <div class="chart-card"><div class="cc-l"><span>Risk score reduction &mdash; 8-week remediation</span><div class="cc-leg"><div class="cc-li"><div class="cc-d" style="background:#ff5555"></div>Risk</div><div class="cc-li"><div class="cc-d" style="background:#00e5cc"></div>Safe threshold</div></div></div><canvas id="c3" height="80"></canvas></div>
+          <div class="chart-card"><div class="cc-l"><span>Risk score reduction &mdash; 8-week remediation</span><div class="cc-leg"><div class="cc-li"><div class="cc-d" style="background:#ff5555"></div>Risk</div><div class="cc-li"><div class="cc-d" style="background:#00e5cc"></div>Safe threshold</div></div></div><canvas id="c3" style="height:80px;max-height:80px"></canvas></div>
           <div class="fit-box"><div class="fit-l">Best fit if you are</div><p class="fit-t">Handling customer data without a formal security review. Pursuing enterprise clients who require SOC 2. Unsure what your current exposure actually looks like.</p></div>
         </div>
       </div>
@@ -623,7 +623,7 @@ function toggleFaq(id){
 function toggleMenu(){
   document.getElementById('mobileMenu').classList.toggle('open');
 }
-var base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false}},elements:{point:{radius:0},line:{tension:0.4,borderWidth:2}}};
+var base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false,min:0,max:120}},elements:{point:{radius:0},line:{tension:0.4,borderWidth:2}}};
 var drawn=false;
 function drawCharts(){
   if(drawn)return;drawn=true;
