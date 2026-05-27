@@ -3,647 +3,1004 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aegis Analytics — Data, AI, Finance and Cybersecurity Consulting</title>
-<meta name="description" content="Aegis Analytics is a boutique consulting firm helping startups and growing businesses use data analytics, AI, investment strategy, and cybersecurity to grow faster and smarter.">
-<meta property="og:title" content="Aegis Analytics">
-<meta property="og:description" content="Data analytics, machine learning, financial strategy, and cybersecurity for startups and growing businesses.">
-<meta property="og:type" content="website">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>Aegis Analytics — Data, AI, Finance & Cybersecurity</title>
+<meta name="description" content="Aegis Analytics helps startups and growing businesses make smarter decisions with data analytics, AI, financial strategy, and cybersecurity.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
---bg:#0a0a0a;
---s1:#111111;
---s2:#161616;
---s3:#1c1c1c;
---s4:#222222;
---white:#ffffff;
---off:#e8e8e4;
---mid:#aaaaaa;
---dim:#666660;
---faint:#333330;
---rule:rgba(255,255,255,0.08);
---rule2:rgba(255,255,255,0.14);
---teal:#00e5cc;
---teal-bg:rgba(0,229,204,0.08);
---gold:#f0a500;
---gold-bg:rgba(240,165,0,0.08);
---red:#ff5555;
---green:#00cc88;
---mono:'IBM Plex Mono',monospace;
---sans:'IBM Plex Sans',system-ui,sans-serif;
+  --bg:#07090f;
+  --bg2:#0d1117;
+  --bg3:#131820;
+  --bg4:#181f2a;
+  --white:#fff;
+  --off:#dde4f0;
+  --mid:#7a8ba6;
+  --dim:#2e3d52;
+  --faint:#161e2a;
+  --border:rgba(99,140,200,0.12);
+  --border2:rgba(99,140,200,0.2);
+  --teal:#00e5cc;
+  --teal2:#00fff0;
+  --teal-a:rgba(0,229,204,0.08);
+  --teal-b:rgba(0,229,204,0.15);
+  --gold:#f5a623;
+  --gold-a:rgba(245,166,35,0.1);
+  --red:#ff5c5c;
+  --green:#00d488;
+  --blue:#4d9fff;
+  --heading:'Syne',sans-serif;
+  --body:'Inter',sans-serif;
 }
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--off);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
+body{background:var(--bg);color:var(--off);font-family:var(--body);font-weight:400;line-height:1.6;overflow-x:hidden}
 
-nav{position:sticky;top:0;z-index:99;background:rgba(10,10,10,0.98);border-bottom:1px solid var(--rule2);padding:0 3rem;display:flex;align-items:center;justify-content:space-between;height:56px}
-.logo{display:flex;align-items:center;gap:10px}
-.logo svg{width:24px;height:24px}
-.logo-text{font-family:var(--sans);font-size:0.82rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--white)}
-.nav-links{display:flex;gap:0;list-style:none}
-.nav-link{font-family:var(--sans);font-size:0.68rem;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim);text-decoration:none;padding:0 1.1rem;height:56px;display:flex;align-items:center;border-bottom:2px solid transparent;transition:all 0.2s}
-.nav-link:hover{color:var(--white);border-bottom-color:var(--teal)}
-.nav-cta{font-family:var(--sans);font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--bg);background:var(--teal);border:none;padding:0.5rem 1.3rem;cursor:pointer;transition:opacity 0.2s}
-.nav-cta:hover{opacity:0.85}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--off);border-radius:2px}
-.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--bg);z-index:98;padding:5rem 2rem 3rem;flex-direction:column;gap:0}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-size:1.1rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--off);text-decoration:none;border-bottom:1px solid var(--rule);padding:1.2rem 0;font-family:var(--sans)}
-.mobile-menu a:hover{color:var(--teal)}
-.m-close{position:absolute;top:1.2rem;right:1.5rem;background:none;border:none;color:var(--off);font-size:1.5rem;cursor:pointer;font-family:var(--mono)}
-.m-cta{margin-top:1.5rem;background:var(--teal);color:var(--bg);font-family:var(--sans);font-size:0.8rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:62px;background:rgba(7,9,15,0.96);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 4rem;backdrop-filter:blur(20px)}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.nav-logo svg{width:30px;height:30px}
+.nav-logo-text{font-family:var(--heading);font-size:0.95rem;font-weight:800;color:var(--white);letter-spacing:0.02em}
+.nav-items{display:flex;align-items:center;gap:2rem}
+.nav-items a{font-size:0.7rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color 0.2s}
+.nav-items a:hover{color:var(--white)}
+.nav-book{font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--teal);color:var(--bg);border:none;padding:0.6rem 1.4rem;cursor:pointer;transition:all 0.2s;margin-left:1rem}
+.nav-book:hover{background:var(--teal2)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.ham span{display:block;width:22px;height:1.5px;background:var(--off)}
+.mob-menu{display:none;position:fixed;inset:0;background:var(--bg);z-index:99;flex-direction:column;padding:5rem 2rem 2rem}
+.mob-menu.show{display:flex}
+.mob-menu a{font-size:1rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--off);text-decoration:none;padding:1rem 0;border-bottom:1px solid var(--faint)}
+.mob-menu a:hover{color:var(--teal)}
+.mob-x{position:absolute;top:1.2rem;right:1.5rem;background:none;border:none;color:var(--off);font-size:1.4rem;cursor:pointer}
+.mob-cta{margin-top:1.5rem;background:var(--teal);color:var(--bg);font-family:var(--body);font-size:0.82rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer}
 
-.hero{min-height:92vh;display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule2);position:relative;overflow:hidden}
-.hero-glow{position:absolute;top:0;right:0;width:60%;height:100%;background:radial-gradient(ellipse 60% 70% at 70% 40%,rgba(0,229,204,0.05) 0%,transparent 65%);pointer-events:none}
-.hero-left{padding:5rem 3rem;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--rule2);position:relative;z-index:1}
-.hero-right{display:flex;flex-direction:column;justify-content:center;padding:3rem;gap:1.8rem;position:relative;z-index:1}
-.h-eyebrow{font-family:var(--mono);font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:2.5rem;display:flex;align-items:center;gap:10px}
-.h-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:blink 2s infinite;flex-shrink:0}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:0.1}}
-h1{font-family:var(--sans);font-size:clamp(2.8rem,4.5vw,5rem);font-weight:300;line-height:1.02;letter-spacing:-0.03em;color:var(--white);margin-bottom:1.8rem}
-h1 strong{font-weight:600}
-h1 .hl{color:var(--teal)}
-.hero-p{font-size:0.92rem;font-weight:300;color:var(--mid);line-height:1.9;max-width:420px;margin-bottom:3rem}
-.hero-btns{display:flex;gap:0.8rem;flex-wrap:wrap;margin-bottom:5rem}
-.btn-p{font-family:var(--sans);font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--bg);background:var(--teal);border:none;padding:0.9rem 2rem;cursor:pointer;transition:opacity 0.2s}
-.btn-p:hover{opacity:0.85}
-.btn-s{font-family:var(--sans);font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--white);background:transparent;border:1px solid var(--rule2);padding:0.9rem 2rem;cursor:pointer;transition:all 0.2s}
-.btn-s:hover{border-color:var(--teal);color:var(--teal)}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--rule2)}
-.hs{padding:1.4rem 0 0}
-.hs-n{font-family:var(--mono);font-size:1.8rem;font-weight:300;color:var(--white);display:block;line-height:1}
-.hs-l{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--dim);margin-top:0.3rem;display:block}
+/* HERO */
+.hero{min-height:100vh;padding:8rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-bottom:1px solid var(--border);position:relative;overflow:hidden;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(0,229,204,0.04) 0%,transparent 60%),radial-gradient(ellipse 40% 40% at 80% 80%,rgba(77,159,255,0.04) 0%,transparent 50%)}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(99,140,200,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(99,140,200,0.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:800px}
+.hero-eyebrow{display:flex;align-items:center;gap:10px;margin-bottom:2.5rem}
+.live-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;animation:pulse 2s infinite;flex-shrink:0;box-shadow:0 0 8px var(--teal)}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 8px var(--teal)}50%{opacity:0.5;box-shadow:0 0 3px var(--teal)}}
+.eyebrow-text{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--teal)}
+.hero-h1{font-family:var(--heading);font-size:clamp(3.8rem,8vw,8rem);font-weight:800;line-height:0.92;letter-spacing:-0.04em;color:var(--white);margin-bottom:2.5rem}
+.hero-h1 .accent{color:var(--teal);display:block}
+.hero-h1 .muted{color:var(--dim)}
+.hero-desc{font-size:1rem;font-weight:300;color:var(--mid);line-height:1.85;max-width:540px;margin-bottom:3rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:5rem}
+.btn-p{font-family:var(--body);font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--teal);color:var(--bg);border:none;padding:1rem 2.5rem;cursor:pointer;transition:all 0.2s}
+.btn-p:hover{background:var(--teal2);transform:translateY(-1px)}
+.btn-o{font-family:var(--body);font-size:0.78rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;background:transparent;color:var(--off);border:1px solid var(--border2);padding:1rem 2.5rem;cursor:pointer;transition:all 0.2s}
+.btn-o:hover{border-color:var(--teal);color:var(--teal)}
+.hero-stats{position:relative;z-index:1;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);padding-top:2.5rem}
+.hs{padding-right:2rem}
+.hs-n{font-family:var(--heading);font-size:2.8rem;font-weight:800;line-height:1;display:block;color:var(--white)}
+.hs-n .u{color:var(--teal)}
+.hs-l{font-size:0.65rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-top:0.4rem;display:block}
 
-.term{background:var(--s1);border:1px solid var(--rule2)}
-.term-bar{background:var(--s2);border-bottom:1px solid var(--rule2);padding:0.6rem 0.9rem;display:flex;align-items:center;gap:6px}
-.td{width:8px;height:8px;border-radius:50%}
-.term-lbl{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-left:6px}
-.term-body{padding:1rem 1.1rem;font-family:var(--mono);font-size:0.74rem;line-height:2.1}
-.tl{display:block}
-.tc1{color:var(--faint)}.tc2{color:var(--teal)}.tc3{color:var(--gold)}.tc4{color:var(--green)}.tc5{color:var(--off)}
-.data-cells{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule2)}
-.dc{background:var(--s1);padding:1rem 1.1rem}
-.dc-l{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-bottom:0.2rem}
-.dc-v{font-family:var(--mono);font-size:1.2rem;color:var(--teal)}
-.dc-s{font-family:var(--mono);font-size:0.58rem;color:var(--dim);margin-top:0.1rem}
+/* MARQUEE */
+.marquee{background:linear-gradient(135deg,var(--teal),#00b8d4);padding:0.85rem 0;overflow:hidden;border-top:none;border-bottom:1px solid var(--border)}
+.marquee-track{display:flex;animation:scroll 22s linear infinite;width:max-content}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.m-item{font-size:0.7rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:rgba(0,0,0,0.75);padding:0 2.5rem;white-space:nowrap;display:flex;align-items:center;gap:0.8rem}
+.m-item::after{content:'◆';font-size:0.35rem;opacity:0.4}
 
-.results-strip{background:var(--s1);border-bottom:1px solid var(--rule2);padding:3.5rem 3rem}
-.rs-label{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--dim);margin-bottom:2rem;display:flex;align-items:center;gap:10px}
-.rs-label::before{content:'';display:block;width:20px;height:1px;background:var(--teal)}
-.rs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-left:1px solid var(--rule2)}
-.rs-item{padding:0 2rem;border-right:1px solid var(--rule2)}
-.rs-num{font-family:var(--mono);font-size:2.4rem;font-weight:300;color:var(--white);line-height:1;display:block}
-.rs-txt{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-top:0.4rem;display:block;line-height:1.5}
+/* RESULTS BAND */
+.results{background:var(--bg2);border-bottom:1px solid var(--border);padding:4rem}
+.results-grid{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--border)}
+.r-item{padding:0 3rem;border-right:1px solid var(--border)}
+.r-num{font-family:var(--heading);font-size:3rem;font-weight:800;color:var(--white);line-height:1;display:block}
+.r-label{font-size:0.62rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid);margin-top:0.5rem;display:block;line-height:1.5}
 
-.sec{padding:5rem 3rem;border-bottom:1px solid var(--rule2)}
-.sec-top{display:flex;align-items:flex-start;gap:3rem;margin-bottom:4rem}
-.sec-idx{font-family:var(--mono);font-size:0.58rem;letter-spacing:0.12em;color:var(--dim);padding-top:0.4rem;min-width:32px}
-.sec-tag{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem}
-h2{font-family:var(--sans);font-size:clamp(1.7rem,2.5vw,2.4rem);font-weight:300;line-height:1.15;color:var(--white)}
-h2 strong{font-weight:600}
-.sec-sub{font-size:0.83rem;font-weight:300;color:var(--mid);line-height:1.85;margin-top:0.7rem;max-width:480px}
+/* SECTIONS */
+.sec{padding:6rem 4rem;border-bottom:1px solid var(--border)}
+.sec.dark{background:var(--bg2)}
+.sec-head{display:flex;gap:4rem;margin-bottom:5rem;align-items:flex-end}
+.sec-hl{flex:0 0 260px}
+.sec-hr{flex:1}
+.sec-num{font-size:0.62rem;font-weight:600;letter-spacing:0.2em;color:var(--dim);margin-bottom:0.8rem;display:block}
+h2{font-family:var(--heading);font-size:clamp(2rem,3.5vw,3rem);font-weight:800;line-height:1.05;color:var(--white);letter-spacing:-0.02em}
+h2 em{font-style:italic;color:var(--teal)}
+.sec-desc{font-size:0.88rem;font-weight:300;color:var(--mid);line-height:1.85;max-width:520px}
 
-.panels{border-top:1px solid var(--rule2)}
-.panel{border-bottom:1px solid var(--rule2)}
-.p-hdr{display:grid;grid-template-columns:36px 1fr 26px;gap:1.5rem;align-items:center;padding:1.4rem 0;cursor:pointer}
-.p-hdr:hover .p-title{color:var(--teal)}
-.p-idx{font-family:var(--mono);font-size:0.6rem;color:var(--dim)}
-.p-title{font-family:var(--sans);font-size:1rem;font-weight:500;color:var(--off);transition:color 0.2s}
-.p-arr{width:24px;height:24px;border:1px solid var(--rule2);display:flex;align-items:center;justify-content:center;font-size:0.85rem;color:var(--dim);transition:all 0.3s;flex-shrink:0}
-.panel.open .p-arr{background:var(--teal);border-color:var(--teal);color:var(--bg);transform:rotate(45deg)}
-.p-body{display:none;padding-bottom:2.5rem}
-.panel.open .p-body{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
-.p-sub{font-size:0.81rem;font-weight:300;color:var(--mid);line-height:1.85;margin-bottom:1.5rem}
-.slist{list-style:none}
-.si{display:flex;gap:0.9rem;padding:0.8rem 0;border-bottom:1px solid var(--rule);align-items:flex-start}
-.si:last-child{border-bottom:none}
-.si-dot{width:4px;height:4px;background:var(--teal);border-radius:50%;flex-shrink:0;margin-top:8px}
-.si-t{font-size:0.81rem;font-weight:500;color:var(--off);margin-bottom:0.18rem}
-.si-d{font-size:0.71rem;font-weight:300;color:var(--dim);line-height:1.6}
-.tools{display:flex;flex-wrap:wrap;gap:5px;margin-top:1.4rem}
-.tool{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.05em;color:var(--dim);border:1px solid var(--rule2);padding:0.18rem 0.5rem}
-.chart-card{background:var(--s2);border:1px solid var(--rule2);padding:1.2rem;margin-bottom:1rem;height:130px;position:relative}
-.cc-l{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-bottom:0.7rem;display:flex;justify-content:space-between}
-.cc-leg{display:flex;gap:0.8rem}
-.cc-li{display:flex;align-items:center;gap:4px;font-family:var(--mono);font-size:0.52rem;color:var(--dim)}
-.cc-d{width:6px;height:6px;border-radius:50%}
-.fit-box{background:var(--teal-bg);border-left:2px solid var(--teal);padding:0.9rem 1.1rem}
-.fit-l{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem}
-.fit-t{font-size:0.74rem;font-weight:300;color:var(--off);line-height:1.75}
+/* SERVICES TABS */
+.tab-bar{display:flex;border-bottom:1px solid var(--border);margin-bottom:3rem;gap:0;overflow-x:auto}
+.tab-btn{font-family:var(--body);font-size:0.72rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);background:none;border:none;border-bottom:2px solid transparent;padding:1rem 2rem 1rem 0;cursor:pointer;margin-bottom:-1px;transition:all 0.2s;white-space:nowrap}
+.tab-btn:hover{color:var(--off)}
+.tab-btn.on{color:var(--teal);border-bottom-color:var(--teal)}
+.tab-panel{display:none}
+.tab-panel.on{display:grid;grid-template-columns:1.1fr 0.9fr;gap:4rem;align-items:start}
+.svc-intro{font-size:0.88rem;font-weight:300;color:var(--mid);line-height:1.85;margin-bottom:2rem}
+.svc-list{list-style:none;margin-bottom:2rem}
+.svc-li{display:flex;gap:1rem;padding:0.9rem 0;border-bottom:1px solid var(--border);align-items:flex-start}
+.svc-li:last-child{border-bottom:none}
+.svc-li-dot{width:3px;height:3px;background:var(--teal);border-radius:50%;flex-shrink:0;margin-top:10px;box-shadow:0 0 6px var(--teal)}
+.svc-li-name{font-size:0.83rem;font-weight:600;color:var(--white);margin-bottom:0.2rem}
+.svc-li-desc{font-size:0.74rem;font-weight:300;color:var(--mid);line-height:1.6}
+.svc-tools{display:flex;flex-wrap:wrap;gap:6px}
+.tool{font-size:0.6rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid);border:1px solid var(--border2);padding:0.22rem 0.65rem;background:var(--faint)}
 
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule2)}
-.step{padding:2rem 2rem 2rem 0;border-right:1px solid var(--rule2)}
-.step:last-child{border-right:none;padding-right:0}
-.step-num{font-family:var(--mono);font-size:2.5rem;font-weight:300;color:var(--faint);line-height:1;margin-bottom:1rem;display:block}
-.step-title{font-family:var(--sans);font-size:0.9rem;font-weight:600;color:var(--white);margin-bottom:0.5rem}
-.step-desc{font-size:0.76rem;font-weight:300;color:var(--dim);line-height:1.75}
-.step-time{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal);margin-top:0.8rem}
+/* chart card */
+.chart-card{background:var(--bg3);border:1px solid var(--border);padding:1.5rem 1.5rem 1.2rem;margin-bottom:1.5rem}
+.chart-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.chart-lbl{font-size:0.62rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
+.chart-leg{display:flex;gap:1rem}
+.chart-li{display:flex;align-items:center;gap:4px;font-size:0.58rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--mid)}
+.chart-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0}
+.chart-wrap{position:relative;height:110px}
 
-.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule2)}
-.ind{background:var(--s1);padding:1.8rem 1.5rem;transition:background 0.25s}
-.ind:hover{background:var(--s2)}
-.ind-icon{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem}
-.ind-name{font-family:var(--sans);font-size:0.9rem;font-weight:500;color:var(--off);margin-bottom:0.3rem}
-.ind-desc{font-size:0.72rem;font-weight:300;color:var(--dim);line-height:1.7}
+.fit-card{background:var(--teal-a);border-left:3px solid var(--teal);padding:1.2rem 1.5rem}
+.fit-label{font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem}
+.fit-text{font-size:0.8rem;font-weight:300;color:var(--off);line-height:1.75}
 
-.tools-strip{border-bottom:1px solid var(--rule2);padding:3rem}
-.ts-label{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--dim);margin-bottom:1.5rem}
-.ts-grid{display:flex;flex-wrap:wrap;gap:8px}
-.ts-tag{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.08em;color:var(--mid);border:1px solid var(--rule2);padding:0.4rem 0.9rem;transition:all 0.2s}
-.ts-tag:hover{border-color:var(--teal);color:var(--teal)}
+/* METRICS CARDS */
+.metrics-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);margin-top:4rem}
+.metric-card{background:var(--bg3);padding:1.8rem 1.5rem;position:relative;overflow:hidden}
+.metric-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent)}
+.metric-val{font-family:var(--heading);font-size:2rem;font-weight:800;color:var(--white);line-height:1;display:block}
+.metric-label{font-size:0.62rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--mid);margin-top:0.4rem;display:block}
+.metric-sub{font-size:0.7rem;font-weight:300;color:var(--dim);margin-top:0.3rem;display:block}
 
-.fin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule2)}
-.fc{background:var(--s1);padding:1.8rem 1.6rem;position:relative;overflow:hidden;transition:background 0.25s}
-.fc:hover{background:var(--s2)}
-.fc-bar{position:absolute;top:0;left:0;right:0;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
-.fc:hover .fc-bar{transform:scaleX(1)}
-.fc-id{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.12em;color:var(--faint);margin-bottom:1rem}
-.fc-title{font-family:var(--sans);font-size:0.9rem;font-weight:500;color:var(--off);margin-bottom:0.4rem}
-.fc-desc{font-size:0.73rem;font-weight:300;color:var(--dim);line-height:1.8;margin-bottom:1rem}
-.fc-tags{display:flex;flex-wrap:wrap;gap:4px}
-.fc-tag{font-family:var(--mono);font-size:0.52rem;color:var(--gold);border:1px solid rgba(240,165,0,0.2);padding:0.16rem 0.48rem}
-.fin-disc{margin-top:1.5rem;border-left:2px solid var(--gold);padding:0.9rem 1.2rem;background:var(--gold-bg)}
-.fin-disc p{font-size:0.72rem;font-weight:300;color:var(--mid);line-height:1.8}
-.fin-disc strong{color:var(--gold);font-weight:500}
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.proc{padding:2.5rem 2.5rem 2.5rem 0;border-right:1px solid var(--border)}
+.proc:last-child{border-right:none;padding-right:0}
+.proc-n{font-family:var(--heading);font-size:3.5rem;font-weight:800;color:var(--faint);line-height:1;margin-bottom:1.5rem}
+.proc-bar{width:32px;height:2px;background:var(--teal);margin-bottom:1.2rem;box-shadow:0 0 8px rgba(0,229,204,0.4)}
+.proc-title{font-family:var(--heading);font-size:0.95rem;font-weight:800;color:var(--white);margin-bottom:0.6rem}
+.proc-desc{font-size:0.76rem;font-weight:300;color:var(--mid);line-height:1.75}
+.proc-time{font-size:0.6rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-top:1rem}
 
-.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule2)}
-.pc{background:var(--s1);padding:2rem 1.8rem;transition:background 0.25s}
-.pc:hover{background:var(--s2)}
-.pc.feat{background:var(--s2)}
-.pc-tier{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.9rem;display:flex;align-items:center;gap:8px}
-.pc-tier::before{content:'';display:block;width:14px;height:1px;background:var(--teal)}
-.pc-name{font-family:var(--sans);font-size:1.3rem;font-weight:300;color:var(--white);margin-bottom:0.4rem}
-.pc-desc{font-size:0.74rem;font-weight:300;color:var(--dim);line-height:1.75;margin-bottom:1.6rem;min-height:48px}
-.pc-price{font-family:var(--mono);font-size:2.2rem;font-weight:300;color:var(--teal);line-height:1}
-.pc.feat .pc-price{color:var(--white)}
-.pc-per{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--dim);margin-top:0.2rem;margin-bottom:1.6rem}
-.pc-line{height:1px;background:var(--rule2);margin-bottom:1.3rem}
-.pc-feats{list-style:none;margin-bottom:1.8rem;display:flex;flex-direction:column;gap:0.7rem}
-.pc-feats li{font-size:0.74rem;font-weight:300;color:var(--off);display:flex;gap:8px;align-items:flex-start}
-.pc-feats li::before{content:'&#8594;';font-family:var(--mono);font-size:0.68rem;color:var(--teal);flex-shrink:0;margin-top:1px}
-.pc-btn{width:100%;padding:0.78rem;font-family:var(--sans);font-size:0.64rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;background:transparent;border:1px solid var(--rule2);color:var(--off);transition:all 0.2s}
-.pc-btn:hover{border-color:var(--teal);color:var(--teal)}
-.pc.feat .pc-btn{background:var(--teal);color:var(--bg);border-color:var(--teal)}
-.pc.feat .pc-btn:hover{opacity:0.85}
-.pricing-note{margin-top:1.5rem;font-family:var(--mono);font-size:0.66rem;color:var(--dim);line-height:1.8;border-left:2px solid var(--rule2);padding-left:1rem}
+/* INDUSTRIES */
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)}
+.ind-card{background:var(--bg2);padding:2rem 1.8rem;transition:background 0.2s;position:relative;overflow:hidden}
+.ind-card:hover{background:var(--bg3)}
+.ind-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.ind-card:hover::after{transform:scaleX(1)}
+.ind-tag{font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.7rem}
+.ind-name{font-family:var(--heading);font-size:0.9rem;font-weight:800;color:var(--white);margin-bottom:0.5rem}
+.ind-desc{font-size:0.72rem;font-weight:300;color:var(--mid);line-height:1.7}
 
-.faqs{border-top:1px solid var(--rule2)}
-.faq{border-bottom:1px solid var(--rule2)}
-.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.3rem 0;cursor:pointer;gap:2rem}
+/* TOOLS */
+.tools-band{padding:3rem 4rem;background:var(--bg3);border-bottom:1px solid var(--border)}
+.tools-label{font-size:0.6rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--mid);margin-bottom:1.2rem}
+.tools-row{display:flex;flex-wrap:wrap;gap:8px}
+.tool-chip{font-size:0.64rem;font-weight:500;letter-spacing:0.06em;color:var(--mid);border:1px solid var(--border2);padding:0.38rem 0.9rem;background:var(--bg2);transition:all 0.2s}
+.tool-chip:hover{border-color:var(--teal);color:var(--teal);background:var(--teal-a)}
+
+/* FINANCE */
+.fin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.fin-card{background:var(--bg2);padding:2rem 1.8rem;position:relative;overflow:hidden;transition:background 0.25s}
+.fin-card:hover{background:var(--bg3)}
+.fin-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent);transform:scaleX(0);transform-origin:left;transition:transform 0.35s}
+.fin-card:hover::before{transform:scaleX(1)}
+.fin-id{font-size:0.58rem;font-weight:700;letter-spacing:0.14em;color:var(--dim);margin-bottom:1rem}
+.fin-title{font-family:var(--heading);font-size:1rem;font-weight:800;color:var(--white);margin-bottom:0.5rem}
+.fin-desc{font-size:0.75rem;font-weight:300;color:var(--mid);line-height:1.8;margin-bottom:1.2rem}
+.fin-tags{display:flex;flex-wrap:wrap;gap:5px}
+.fin-tag{font-size:0.56rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(245,166,35,0.2);padding:0.18rem 0.5rem;background:rgba(245,166,35,0.05)}
+.fin-note{margin-top:2rem;padding:1.2rem 1.5rem;background:var(--gold-a);border-left:3px solid var(--gold)}
+.fin-note p{font-size:0.74rem;font-weight:300;color:var(--mid);line-height:1.8}
+.fin-note strong{color:var(--gold);font-weight:600}
+
+/* PRICING */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.p-card{background:var(--bg2);border:1px solid var(--border);padding:2.5rem 2rem;transition:border-color 0.2s}
+.p-card:hover{border-color:var(--border2)}
+.p-card.feat{background:var(--bg3);border-color:var(--teal);position:relative}
+.p-card.feat::before{content:'Most Popular';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--teal);color:var(--bg);font-size:0.58rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.3rem 0.9rem;white-space:nowrap}
+.p-tier{font-size:0.6rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:flex;align-items:center;gap:8px}
+.p-tier::before{content:'';display:block;width:16px;height:1px;background:var(--teal)}
+.p-name{font-family:var(--heading);font-size:1.4rem;font-weight:800;color:var(--white);margin-bottom:0.5rem}
+.p-desc{font-size:0.78rem;font-weight:300;color:var(--mid);line-height:1.7;margin-bottom:2rem;min-height:52px}
+.p-price{font-family:var(--heading);font-size:2.8rem;font-weight:800;color:var(--white);line-height:1}
+.p-card.feat .p-price{color:var(--teal)}
+.p-per{font-size:0.62rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim);margin-top:0.3rem;margin-bottom:2rem}
+.p-line{height:1px;background:var(--border);margin-bottom:1.8rem}
+.p-feats{list-style:none;margin-bottom:2rem;display:flex;flex-direction:column;gap:0.85rem}
+.p-feats li{font-size:0.8rem;font-weight:300;color:var(--off);display:flex;gap:10px;align-items:flex-start}
+.p-feats li::before{content:'→';font-size:0.7rem;color:var(--teal);flex-shrink:0;margin-top:2px}
+.p-btn{width:100%;padding:0.9rem;font-family:var(--body);font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;background:transparent;border:1px solid var(--border2);color:var(--off);transition:all 0.2s}
+.p-btn:hover{border-color:var(--teal);color:var(--teal)}
+.p-card.feat .p-btn{background:var(--teal);color:var(--bg);border-color:var(--teal)}
+.p-card.feat .p-btn:hover{background:var(--teal2)}
+.price-note{margin-top:2rem;padding:1rem 1.5rem;background:var(--bg3);border-left:2px solid var(--border2);font-size:0.75rem;font-weight:300;color:var(--dim);line-height:1.8}
+
+/* FAQ */
+.faq-list{border-top:1px solid var(--border)}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-q{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 0;cursor:pointer;gap:2rem}
+.faq-qt{font-size:0.93rem;font-weight:500;color:var(--off);transition:color 0.2s}
 .faq-q:hover .faq-qt{color:var(--teal)}
-.faq-qt{font-family:var(--sans);font-size:0.88rem;font-weight:500;color:var(--off);transition:color 0.2s}
-.faq-ic{font-family:var(--mono);font-size:1rem;color:var(--dim);flex-shrink:0;transition:transform 0.3s}
-.faq.open .faq-ic{transform:rotate(45deg);color:var(--teal)}
-.faq-a{display:none;padding-bottom:1.3rem;font-size:0.8rem;font-weight:300;color:var(--dim);line-height:1.85;max-width:640px}
-.faq.open .faq-a{display:block}
+.faq-ic{font-size:0.9rem;color:var(--dim);flex-shrink:0;transition:transform 0.3s;font-style:normal;width:24px;height:24px;border:1px solid var(--border2);display:flex;align-items:center;justify-content:center}
+.faq-item.open .faq-qt{color:var(--teal)}
+.faq-item.open .faq-ic{transform:rotate(45deg);color:var(--teal);border-color:var(--teal)}
+.faq-a{display:none;padding-bottom:1.5rem;font-size:0.84rem;font-weight:300;color:var(--mid);line-height:1.85;max-width:700px}
+.faq-item.open .faq-a{display:block}
 
-.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule2)}
-.bc{background:var(--s1);overflow:hidden;cursor:pointer;transition:background 0.25s}
-.bc:hover{background:var(--s2)}
-.bc-img{width:100%;height:140px;object-fit:cover;display:block;filter:grayscale(50%) brightness(0.6)}
-.bc-body{padding:1.4rem 1.5rem}
-.bc-meta{display:flex;gap:0.8rem;align-items:center;margin-bottom:0.6rem}
-.bc-cat{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
-.bc-date{font-family:var(--mono);font-size:0.54rem;color:var(--faint)}
-.bc-title{font-family:var(--sans);font-size:0.88rem;font-weight:500;color:var(--off);line-height:1.35;margin-bottom:0.5rem}
-.bc-text{font-size:0.72rem;font-weight:300;color:var(--dim);line-height:1.75;margin-bottom:0.9rem}
-.bc-read{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
+/* BLOG */
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.blog-card{background:var(--bg2);overflow:hidden;transition:background 0.2s;cursor:pointer}
+.blog-card:hover{background:var(--bg3)}
+.blog-img{width:100%;height:190px;object-fit:cover;display:block;filter:grayscale(30%) brightness(0.65);transition:filter 0.3s}
+.blog-card:hover .blog-img{filter:grayscale(0%) brightness(0.75)}
+.blog-body{padding:1.8rem}
+.blog-meta{display:flex;gap:1rem;align-items:center;margin-bottom:0.8rem}
+.blog-cat{font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
+.blog-date{font-size:0.6rem;color:var(--dim)}
+.blog-title{font-family:var(--heading);font-size:1.05rem;font-weight:800;color:var(--white);line-height:1.25;margin-bottom:0.6rem}
+.blog-excerpt{font-size:0.77rem;font-weight:300;color:var(--mid);line-height:1.75;margin-bottom:1.2rem}
+.blog-read{font-size:0.63rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--teal)}
 
-.contact-split{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--rule2)}
-.cl{padding:4rem 3rem;border-right:1px solid var(--rule2)}
-.cl-tag{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:1.4rem;display:flex;align-items:center;gap:8px}
-.cl-tag::before{content:'';width:14px;height:1px;background:var(--teal);display:block}
-.cl h3{font-family:var(--sans);font-size:1.8rem;font-weight:300;color:var(--white);line-height:1.15;margin-bottom:0.9rem}
-.cl p{font-size:0.81rem;font-weight:300;color:var(--mid);line-height:1.85;margin-bottom:2.5rem}
-.cd-list{display:flex;flex-direction:column;gap:0}
-.cd-row{padding:0.85rem 0;border-bottom:1px solid var(--rule2)}
-.cd-row:last-child{border-bottom:none}
-.cd-lbl{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--faint);margin-bottom:0.18rem}
-.cd-val{font-size:0.82rem;font-weight:300;color:var(--off)}
-.cr{padding:4rem 3rem;background:var(--s1)}
-.form{display:flex;flex-direction:column;gap:1.2rem}
-.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
-.fg{display:flex;flex-direction:column;gap:0.38rem}
-.fg label{font-family:var(--mono);font-size:0.54rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim)}
-.fg input,.fg select,.fg textarea{background:var(--s2);border:1px solid var(--rule2);padding:0.65rem 0.85rem;color:var(--white);font-family:var(--sans);font-size:0.83rem;font-weight:300;outline:none;transition:border-color 0.2s;resize:none}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal)}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--faint)}
-.fg select option{background:var(--s2);color:var(--white)}
-.fsub{background:var(--teal);color:var(--bg);font-family:var(--sans);font-size:0.68rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.9rem;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:0.3rem}
-.fsub:hover{opacity:0.85}
+/* CONTACT */
+.contact-split{display:grid;grid-template-columns:1fr 1fr}
+.cl{background:linear-gradient(135deg,var(--bg3) 0%,var(--bg2) 100%);padding:5rem 4rem;border-right:1px solid var(--border);position:relative;overflow:hidden}
+.cl::before{content:'';position:absolute;top:-100px;right:-100px;width:300px;height:300px;background:radial-gradient(circle,rgba(0,229,204,0.06) 0%,transparent 70%);pointer-events:none}
+.cl-tag{font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1.5rem;display:flex;align-items:center;gap:10px}
+.cl-tag::before{content:'';display:block;width:18px;height:1px;background:var(--teal);box-shadow:0 0 4px var(--teal)}
+.cl h3{font-family:var(--heading);font-size:2.2rem;font-weight:800;color:var(--white);line-height:1.15;margin-bottom:1rem}
+.cl p{font-size:0.86rem;font-weight:300;color:var(--mid);line-height:1.85;margin-bottom:3rem}
+.c-details{display:flex;flex-direction:column}
+.c-row{padding:0.9rem 0;border-bottom:1px solid var(--border)}
+.c-row:last-child{border-bottom:none}
+.c-label{font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);margin-bottom:0.22rem}
+.c-val{font-size:0.86rem;font-weight:400;color:var(--off)}
+.cr{background:var(--bg2);padding:5rem 4rem}
+.form{display:flex;flex-direction:column;gap:1.4rem}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.fg{display:flex;flex-direction:column;gap:0.45rem}
+.fg label{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid)}
+.fg input,.fg select,.fg textarea{background:var(--bg3);border:1px solid var(--border2);padding:0.8rem 1rem;color:var(--white);font-family:var(--body);font-size:0.86rem;font-weight:300;outline:none;transition:border-color 0.2s;resize:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--teal);background:var(--faint)}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--dim)}
+.fg select option{background:var(--bg3);color:var(--white)}
+.fsub{background:var(--teal);color:var(--bg);font-family:var(--body);font-size:0.76rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:1rem;border:none;cursor:pointer;transition:all 0.2s}
+.fsub:hover{background:var(--teal2);transform:translateY(-1px)}
 
-footer{background:var(--s1);border-top:1px solid var(--rule2);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center}
-.fl{font-family:var(--mono);font-size:0.62rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--dim)}
-.fl span{color:var(--teal)}
-.fc-copy{font-family:var(--mono);font-size:0.56rem;color:var(--faint)}
-.fr{display:flex;gap:1.5rem}
-.fr a{font-family:var(--mono);font-size:0.56rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--faint);text-decoration:none;transition:color 0.2s}
-.fr a:hover{color:var(--teal)}
+footer{background:var(--bg3);border-top:1px solid var(--border);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center}
+.f-brand{font-family:var(--heading);font-size:0.9rem;font-weight:800;color:var(--mid)}
+.f-brand span{color:var(--teal)}
+.f-copy{font-size:0.65rem;color:var(--dim)}
+.f-links{display:flex;gap:2rem}
+.f-links a{font-size:0.65rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;color:var(--dim);text-decoration:none;transition:color 0.2s}
+.f-links a:hover{color:var(--teal)}
 
-@media(max-width:768px){
-nav{padding:0 1.2rem}
-.nav-links{display:none}
-.hamburger{display:flex}
-.hero{grid-template-columns:1fr}
-.hero-right{display:none}
-.hero-left{padding:3.5rem 1.5rem}
-h1{font-size:2.6rem}
-.sec{padding:3.5rem 1.5rem}
-.sec-top{flex-direction:column;gap:0.5rem}
-.panel.open .p-body{grid-template-columns:1fr}
-.steps{grid-template-columns:1fr 1fr}
-.step{padding:1.5rem 1rem}
-.ind-grid{grid-template-columns:1fr 1fr}
-.fin-grid,.pricing-grid,.blog-grid{grid-template-columns:1fr}
-.rs-grid{grid-template-columns:1fr 1fr}
-.contact-split{grid-template-columns:1fr}
-.cl,.cr{padding:2.5rem 1.5rem}
-.frow{grid-template-columns:1fr}
-footer{flex-direction:column;gap:0.6rem;text-align:center}
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-items,.nav-book{display:none}
+  .ham{display:flex}
+  .hero{padding:6rem 1.5rem 4rem}
+  .hero-h1{font-size:3.5rem}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:2rem}
+  .sec{padding:4rem 1.5rem}
+  .sec-head{flex-direction:column;gap:1rem;margin-bottom:3rem}
+  .sec-hl{flex:none}
+  .tab-panel.on{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .proc{padding:1.5rem 1rem}
+  .ind-grid{grid-template-columns:1fr 1fr}
+  .fin-grid{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr}
+  .contact-split{grid-template-columns:1fr}
+  .cl,.cr{padding:3rem 1.5rem}
+  .frow{grid-template-columns:1fr}
+  .results-grid{grid-template-columns:1fr 1fr}
+  .r-item{padding:1.5rem;border-bottom:1px solid var(--border)}
+  .metrics-row{grid-template-columns:1fr 1fr}
+  .tools-band{padding:3rem 1.5rem}
+  footer{flex-direction:column;gap:0.8rem;text-align:center;padding:1.5rem}
+}
+
+
+/* === FULL COLOR + ENERGY UPGRADE / CHART CONTAINER FIX === */
+:root{
+  --bg:#050712;
+  --bg2:#09111f;
+  --bg3:#0f1b2d;
+  --bg4:#15243a;
+  --white:#ffffff;
+  --off:#eef6ff;
+  --mid:#9db4d6;
+  --dim:#40536f;
+  --faint:#111b2b;
+  --border:rgba(0,255,240,0.14);
+  --border2:rgba(120,178,255,0.28);
+  --teal:#00fff0;
+  --teal2:#63fff5;
+  --teal-a:rgba(0,255,240,0.10);
+  --teal-b:rgba(0,255,240,0.22);
+  --gold:#ffbf45;
+  --gold-a:rgba(255,191,69,0.14);
+  --red:#ff4d7d;
+  --green:#00f5a0;
+  --blue:#6ca8ff;
+  --violet:#9b6cff;
+}
+body{
+  background:
+    radial-gradient(circle at 12% 8%,rgba(0,255,240,0.10),transparent 28%),
+    radial-gradient(circle at 88% 18%,rgba(155,108,255,0.10),transparent 30%),
+    radial-gradient(circle at 50% 100%,rgba(255,191,69,0.08),transparent 32%),
+    var(--bg);
+}
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  background:
+    linear-gradient(115deg,transparent 0%,rgba(0,255,240,0.035) 32%,transparent 58%),
+    linear-gradient(290deg,transparent 0%,rgba(155,108,255,0.035) 42%,transparent 70%);
+  animation:aegisAurora 12s ease-in-out infinite alternate;
+}
+@keyframes aegisAurora{from{opacity:.55;transform:translate3d(-1%,0,0)}to{opacity:1;transform:translate3d(1%,0,0)}}
+nav{box-shadow:0 12px 40px rgba(0,0,0,0.28)}
+.nav-logo svg{filter:drop-shadow(0 0 10px rgba(0,255,240,0.45))}
+.hero{
+  background:
+    radial-gradient(ellipse 70% 55% at 35% 10%,rgba(0,255,240,0.14) 0%,transparent 55%),
+    radial-gradient(ellipse 45% 45% at 82% 78%,rgba(155,108,255,0.12) 0%,transparent 55%),
+    linear-gradient(145deg,rgba(5,7,18,0.98),rgba(9,17,31,0.96));
+}
+.hero-h1 .accent{
+  background:linear-gradient(90deg,var(--teal),var(--blue),var(--violet));
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  text-shadow:0 0 34px rgba(0,255,240,0.16);
+}
+.btn-p,.nav-book,.mob-cta,.fsub,.p-card.feat .p-btn{
+  background:linear-gradient(135deg,var(--teal),var(--blue));
+  box-shadow:0 10px 30px rgba(0,255,240,0.16);
+}
+.btn-p:hover,.nav-book:hover,.mob-cta:hover,.fsub:hover,.p-card.feat .p-btn:hover{
+  background:linear-gradient(135deg,var(--teal2),var(--violet));
+  box-shadow:0 14px 38px rgba(0,255,240,0.24);
+}
+.marquee{background:linear-gradient(90deg,var(--teal),var(--blue),var(--violet),var(--gold));}
+.r-item,.metric-card,.ind-card,.fin-card,.p-card,.blog-card,.chart-card{
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,background .25s ease;
+}
+.r-item:hover,.metric-card:hover,.ind-card:hover,.fin-card:hover,.p-card:hover,.blog-card:hover,.chart-card:hover{
+  transform:translateY(-4px);
+}
+.metric-card:hover,.ind-card:hover,.fin-card:hover,.p-card:hover,.blog-card:hover{
+  box-shadow:0 18px 50px rgba(0,0,0,0.22),0 0 28px rgba(0,255,240,0.08);
+}
+
+/* Fixed, stronger chart containers */
+.chart-card{
+  position:relative;
+  overflow:hidden;
+  min-height:220px;
+  border:1px solid rgba(0,255,240,0.22);
+  background:
+    linear-gradient(180deg,rgba(255,255,255,0.035),rgba(255,255,255,0.01)),
+    radial-gradient(circle at 18% 0%,rgba(0,255,240,0.13),transparent 45%),
+    radial-gradient(circle at 88% 95%,rgba(155,108,255,0.10),transparent 48%),
+    var(--bg3);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.05),0 20px 55px rgba(0,0,0,0.26);
+}
+.chart-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  border-radius:inherit;
+  background:linear-gradient(120deg,transparent,rgba(0,255,240,0.09),transparent 58%);
+  transform:translateX(-110%);
+  animation:chartSweep 7s ease-in-out infinite;
+}
+@keyframes chartSweep{0%,55%{transform:translateX(-110%)}85%,100%{transform:translateX(110%)}}
+.chart-top{position:relative;z-index:2;flex-wrap:wrap;gap:.8rem}
+.chart-wrap{
+  position:relative;
+  z-index:2;
+  height:150px;
+  min-height:150px;
+  width:100%;
+  overflow:hidden;
+  border-radius:16px;
+  padding:6px;
+  background:rgba(5,7,18,0.30);
+  border:1px solid rgba(255,255,255,0.05);
+}
+.chart-wrap canvas{
+  display:block !important;
+  width:100% !important;
+  height:100% !important;
+  max-width:100%;
+}
+.fit-card{
+  background:linear-gradient(135deg,rgba(0,255,240,0.12),rgba(108,168,255,0.08));
+  box-shadow:0 14px 40px rgba(0,0,0,0.16);
+}
+.sec.dark{background:linear-gradient(180deg,var(--bg2),#07101d)}
+.fin-card::before{background:linear-gradient(90deg,var(--gold),var(--teal),transparent)}
+@media(max-width:900px){
+  .chart-card{min-height:240px}
+  .chart-wrap{height:170px;min-height:170px}
+}
+
+
+
+/* Premium layout pass: left aligned section subtopics + cleaner energy */
+.sec{
+  position:relative;
+  overflow:hidden;
+}
+.sec::before{
+  content:'';
+  position:absolute;
+  top:0;
+  left:4rem;
+  right:4rem;
+  height:1px;
+  background:linear-gradient(90deg,rgba(0,255,240,0.55),rgba(108,168,255,0.24),transparent 70%);
+  opacity:.55;
+}
+.sec-head{
+  display:block;
+  max-width:860px;
+  margin-bottom:3.6rem;
+  text-align:left;
+}
+.sec-hl{flex:none;max-width:720px;margin-bottom:1rem;}
+.sec-hr{max-width:620px;}
+.sec-num{
+  display:inline-flex;
+  align-items:center;
+  gap:.7rem;
+  margin-bottom:1rem;
+  color:rgba(0,255,240,.72);
+}
+.sec-num::after{
+  content:'';
+  width:44px;
+  height:1px;
+  background:linear-gradient(90deg,var(--teal),transparent);
+  box-shadow:0 0 10px rgba(0,255,240,.35);
+}
+h2{max-width:720px;}
+.sec-desc{max-width:640px;font-size:.94rem;color:#abc0df;}
+
+.hero-content{max-width:900px;}
+.hero-desc{font-size:1.05rem;color:#a9bbd6;}
+.hero-ctas{align-items:center;}
+.btn-p,.btn-o,.p-btn,.fsub,.nav-book{border-radius:999px;}
+.btn-o{background:rgba(255,255,255,.025);backdrop-filter:blur(10px);}
+.btn-o:hover{background:rgba(0,255,240,.06);box-shadow:0 0 24px rgba(0,255,240,.10);}
+.hero-stats,.results-grid,.metrics-row,.ind-grid,.fin-grid,.price-grid,.blog-grid{isolation:isolate;}
+.hs,.r-item,.metric-card,.ind-card,.fin-card,.p-card,.blog-card{
+  backdrop-filter:blur(10px);
+}
+.r-num,.metric-val,.p-price{letter-spacing:-.035em;}
+
+.tab-bar{
+  justify-content:flex-start;
+  border-bottom-color:rgba(0,255,240,.12);
+  margin-bottom:2.5rem;
+}
+.tab-btn{padding-right:2.4rem;}
+.tab-panel.on{gap:3rem;}
+.svc-li{
+  padding:1rem 1rem 1rem .95rem;
+  border:1px solid rgba(120,178,255,.10);
+  border-radius:18px;
+  margin-bottom:.75rem;
+  background:linear-gradient(135deg,rgba(255,255,255,.028),rgba(255,255,255,.008));
+}
+.svc-li:hover{
+  border-color:rgba(0,255,240,.28);
+  background:linear-gradient(135deg,rgba(0,255,240,.07),rgba(108,168,255,.035));
+  transform:translateX(4px);
+  transition:all .22s ease;
+}
+.svc-li-dot{width:7px;height:7px;margin-top:8px;}
+.svc-li-name{font-size:.88rem;}
+.svc-li-desc{font-size:.76rem;color:#91a7c8;}
+.tool,.tool-chip,.fin-tag{border-radius:999px;}
+
+.ind-grid,.fin-grid,.blog-grid,.metrics-row{gap:1px;background:rgba(0,255,240,.13);}
+.ind-card,.fin-card,.metric-card,.blog-card,.p-card{
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012)),var(--bg2);
+}
+.ind-card::after,.fin-card::before,.metric-card::before{
+  box-shadow:0 0 18px rgba(0,255,240,.25);
+}
+.price-grid{align-items:stretch;}
+.p-card{
+  border-radius:26px;
+  box-shadow:0 18px 55px rgba(0,0,0,.16);
+}
+.p-card.feat{
+  box-shadow:0 26px 80px rgba(0,255,240,.10),0 0 0 1px rgba(0,255,240,.18) inset;
+}
+.p-card.feat::before{border-radius:999px;}
+.faq-q{padding:1.7rem 0;}
+.faq-qt{font-size:1rem;}
+
+.contact-split{
+  background:
+    radial-gradient(circle at 8% 0%,rgba(0,255,240,.13),transparent 28%),
+    radial-gradient(circle at 96% 80%,rgba(155,108,255,.12),transparent 30%),
+    var(--bg2);
+}
+.cl,.cr{background:transparent;}
+.cl{border-right:1px solid rgba(0,255,240,.14);}
+.contact-title{
+  font-family:var(--heading);
+  font-size:clamp(2.4rem,4vw,4rem);
+  font-weight:800;
+  color:var(--white);
+  line-height:.98;
+  letter-spacing:-.04em;
+  margin-bottom:1.2rem;
+}
+.form{
+  padding:1.5rem;
+  border:1px solid rgba(0,255,240,.14);
+  border-radius:28px;
+  background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));
+  box-shadow:0 24px 70px rgba(0,0,0,.18);
+}
+.fg input,.fg select,.fg textarea{border-radius:16px;}
+footer{background:linear-gradient(90deg,#07101d,var(--bg3));}
+
+@media(max-width:900px){
+  .sec::before{left:1.5rem;right:1.5rem;}
+  .sec-head{margin-bottom:2.5rem;}
+  .sec-desc{font-size:.88rem;}
+  .tab-btn{padding-right:1.5rem;}
+  .svc-li:hover{transform:none;}
+  .form{padding:1rem;border-radius:22px;}
 }
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="logo">
-    <svg viewBox="0 0 24 24" fill="none"><polygon points="12,2 22,7 22,17 12,22 2,17 2,7" stroke="#00e5cc" stroke-width="1.2" fill="none"/><polygon points="12,7 17,9.5 17,14.5 12,17 7,14.5 7,9.5" fill="#00e5cc"/></svg>
-    <span class="logo-text">Aegis Analytics</span>
+  <a class="nav-logo" href="#">
+    <svg viewBox="0 0 30 30" fill="none"><polygon points="15,2 28,8.5 28,21.5 15,28 2,21.5 2,8.5" stroke="#00e5cc" stroke-width="1.5" fill="none"/><polygon points="15,8 21,11.5 21,18.5 15,22 9,18.5 9,11.5" fill="#00e5cc" opacity="0.9"/></svg>
+    <span class="nav-logo-text">Aegis Analytics</span>
+  </a>
+  <div class="nav-items">
+    <a href="#services">Services</a>
+    <a href="#finance">Finance</a>
+    <a href="#process">Process</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
   </div>
-  <ul class="nav-links">
-    <li><a class="nav-link" href="#services">Services</a></li>
-    <li><a class="nav-link" href="#finance">Finance</a></li>
-    <li><a class="nav-link" href="#pricing">Pricing</a></li>
-    <li><a class="nav-link" href="#faq">FAQ</a></li>
-    <li><a class="nav-link" href="#insights">Insights</a></li>
-    <li><a class="nav-link" href="#contact">Contact</a></li>
-  </ul>
-  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a call</button>
-  <div class="hamburger" onclick="toggleMenu()" id="hamburger"><span></span><span></span><span></span></div>
+  <button class="nav-book" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Call</button>
+  <div class="ham" onclick="document.getElementById('mob').classList.add('show')"><span></span><span></span><span></span></div>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
-  <button class="m-close" onclick="toggleMenu()">&#10005;</button>
-  <a href="#services" onclick="toggleMenu()">Services</a>
-  <a href="#finance" onclick="toggleMenu()">Finance</a>
-  <a href="#pricing" onclick="toggleMenu()">Pricing</a>
-  <a href="#faq" onclick="toggleMenu()">FAQ</a>
-  <a href="#insights" onclick="toggleMenu()">Insights</a>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
-  <button class="m-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});toggleMenu()">Book a Free Call</button>
+<div class="mob-menu" id="mob">
+  <button class="mob-x" onclick="document.getElementById('mob').classList.remove('show')">&#10005;</button>
+  <a href="#services" onclick="document.getElementById('mob').classList.remove('show')">Services</a>
+  <a href="#finance" onclick="document.getElementById('mob').classList.remove('show')">Finance</a>
+  <a href="#process" onclick="document.getElementById('mob').classList.remove('show')">Process</a>
+  <a href="#pricing" onclick="document.getElementById('mob').classList.remove('show')">Pricing</a>
+  <a href="#faq" onclick="document.getElementById('mob').classList.remove('show')">FAQ</a>
+  <a href="#contact" onclick="document.getElementById('mob').classList.remove('show')">Contact</a>
+  <button class="mob-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});document.getElementById('mob').classList.remove('show')">Book a Free Call</button>
 </div>
 
-<div class="hero">
-  <div class="hero-glow"></div>
-  <div class="hero-left">
-    <div>
-      <div class="h-eyebrow"><span class="h-dot"></span>Aegis Analytics &mdash; California</div>
-      <h1><strong>Data</strong> that<br>builds<br><span class="hl">trust.</span></h1>
-      <p class="hero-p">We help startups and growing businesses make sharper decisions using data analytics, machine learning, financial strategy, and cybersecurity. The kind of capability that used to require a firm you couldn't afford.</p>
-      <div class="hero-btns">
-        <button class="btn-p" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start a conversation</button>
-        <button class="btn-s" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">View services</button>
-      </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span class="live-dot"></span>
+      <span class="eyebrow-text">Aegis Analytics &mdash; California</span>
     </div>
-    <div class="hero-stats">
-      <div class="hs"><span class="hs-n">$750</span><span class="hs-l">Starting engagement</span></div>
-      <div class="hs"><span class="hs-n">24h</span><span class="hs-l">Response commitment</span></div>
-      <div class="hs"><span class="hs-n">4</span><span class="hs-l">Practice areas</span></div>
+    <h1 class="hero-h1">
+      Where data<br>
+      <span class="accent">meets</span>
+      decisions.
+    </h1>
+    <p class="hero-desc">A boutique consulting firm helping startups and growing businesses use data analytics, AI, financial strategy, and cybersecurity to grow faster, invest smarter, and stay secure.</p>
+    <div class="hero-ctas">
+      <button class="btn-p" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Free Consultation</button>
+      <button class="btn-o" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">Explore Services</button>
     </div>
   </div>
-  <div class="hero-right">
-    <div class="term">
-      <div class="term-bar">
-        <div class="td" style="background:#ff5f57"></div>
-        <div class="td" style="background:#febc2e"></div>
-        <div class="td" style="background:#28c840"></div>
-        <span class="term-lbl">aegis / analysis_engine.py &mdash; running</span>
-      </div>
-      <div class="term-body">
-        <span class="tl"><span class="tc1">// client session initialised</span></span>
-        <span class="tl"><span class="tc2">PIPELINE</span>&nbsp;&nbsp;&nbsp;<span class="tc5">connected</span>&nbsp;&nbsp;<span class="tc4">OK</span></span>
-        <span class="tl"><span class="tc2">CHURN_MODEL</span>&nbsp;&nbsp;<span class="tc5">accuracy</span>&nbsp;&nbsp;<span class="tc4">91.4%</span></span>
-        <span class="tl"><span class="tc2">FORECAST</span>&nbsp;&nbsp;&nbsp;<span class="tc5">30d_revenue</span>&nbsp;&nbsp;<span class="tc4">+18.3%</span></span>
-        <span class="tl"><span class="tc3">PORTFOLIO</span>&nbsp;&nbsp;&nbsp;<span class="tc5">risk_score</span>&nbsp;&nbsp;<span class="tc2">LOW</span></span>
-        <span class="tl"><span class="tc2">SECURITY</span>&nbsp;&nbsp;&nbsp;<span class="tc5">posture</span>&nbsp;&nbsp;<span class="tc4">HARDENED</span></span>
-        <span class="tl"><span class="tc1">_</span></span>
-      </div>
-    </div>
-    <div class="data-cells">
-      <div class="dc"><div class="dc-l">Churn reduction</div><div class="dc-v">-62%</div><div class="dc-s">avg. across engagements</div></div>
-      <div class="dc"><div class="dc-l">Model accuracy</div><div class="dc-v">91%</div><div class="dc-s">deployed ML models</div></div>
-      <div class="dc"><div class="dc-l">Reporting time</div><div class="dc-v">-85%</div><div class="dc-s">after pipeline setup</div></div>
-      <div class="dc"><div class="dc-l">Risk score drop</div><div class="dc-v">-89%</div><div class="dc-s">post security review</div></div>
-    </div>
+  <div class="hero-stats">
+    <div class="hs"><span class="hs-n">$<span class="u">750</span></span><span class="hs-l">Starting engagement</span></div>
+    <div class="hs"><span class="hs-n"><span class="u">24</span>h</span><span class="hs-l">Response guarantee</span></div>
+    <div class="hs"><span class="hs-n"><span class="u">4</span></span><span class="hs-l">Practice areas</span></div>
+    <div class="hs"><span class="hs-n"><span class="u">Global</span></span><span class="hs-l">Client reach</span></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="m-item">Data Analytics</span><span class="m-item">Machine Learning</span><span class="m-item">Cybersecurity</span><span class="m-item">Investment Strategy</span><span class="m-item">Financial Modeling</span><span class="m-item">AI Integration</span><span class="m-item">Fractional CFO</span><span class="m-item">SOC 2 Readiness</span><span class="m-item">Data Analytics</span><span class="m-item">Machine Learning</span><span class="m-item">Cybersecurity</span><span class="m-item">Investment Strategy</span><span class="m-item">Financial Modeling</span><span class="m-item">AI Integration</span><span class="m-item">Fractional CFO</span><span class="m-item">SOC 2 Readiness</span>
   </div>
 </div>
 
-<div class="results-strip">
-  <div class="rs-label">Why it matters</div>
-  <div class="rs-grid">
-    <div class="rs-item"><span class="rs-num">60%</span><span class="rs-txt">of SMBs make key decisions without reliable data</span></div>
-    <div class="rs-item"><span class="rs-num">$4.5M</span><span class="rs-txt">average cost of a data breach for a small business</span></div>
-    <div class="rs-item"><span class="rs-num">3x</span><span class="rs-txt">faster decision-making with real-time dashboards</span></div>
-    <div class="rs-item"><span class="rs-num">78%</span><span class="rs-txt">of AI projects fail without the right data foundation</span></div>
+<!-- RESULTS -->
+<div class="results">
+  <div class="results-grid">
+    <div class="r-item"><span class="r-num">60%</span><span class="r-label">of SMBs make key decisions without reliable data</span></div>
+    <div class="r-item"><span class="r-num">$4.5M</span><span class="r-label">average cost of a breach for a small business</span></div>
+    <div class="r-item"><span class="r-num">3x</span><span class="r-label">faster decisions with real-time dashboards</span></div>
+    <div class="r-item"><span class="r-num">78%</span><span class="r-label">of AI projects fail without the right data foundation</span></div>
   </div>
 </div>
 
+<!-- SERVICES -->
 <section class="sec" id="services">
-  <div class="sec-top">
-    <span class="sec-idx">01</span>
-    <div>
-      <div class="sec-tag">Services</div>
-      <h2><strong>Four practice areas.</strong><br>One firm.</h2>
-      <p class="sec-sub">Each practice has a clear scope, honest deliverables, and a defined process. Click any area to see exactly what is included.</p>
+  <div class="sec-head">
+    <div class="sec-hl">
+      <span class="sec-num">01 &mdash; Services</span>
+      <h2>Our core<br><em>services.</em></h2>
+    </div>
+    <div class="sec-hr">
+      <p class="sec-desc">Four practice areas, each with a clear scope and honest deliverables. Select a service tab to see what is included, how a typical engagement works, and whether it is the right fit for you.</p>
     </div>
   </div>
-  <div class="panels">
-    <div class="panel open" id="p1">
-      <div class="p-hdr" onclick="tog('p1')"><span class="p-idx">01</span><span class="p-title">Data Analytics and Reporting</span><div class="p-arr">+</div></div>
-      <div class="p-body">
-        <div>
-          <p class="p-sub">Most businesses are sitting on data they never use. We map what you have, build the infrastructure to capture it properly, and deliver dashboards and models your team actually relies on.</p>
-          <ul class="slist">
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Data audit and gap analysis</div><div class="si-d">What exists, what is missing, and what actually matters for the decisions you make each week.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Executive dashboard design</div><div class="si-d">Real-time dashboards in Power BI, Looker, or Tableau built around your workflow, not a generic template.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Automated data pipelines</div><div class="si-d">ETL systems that deliver the right numbers to the right people, every day, without anyone pulling a report manually.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Revenue and demand forecasting</div><div class="si-d">Statistical models that tell you what is coming, not just what already happened.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Customer segmentation and churn prediction</div><div class="si-d">Know who your most valuable customers are and who is about to leave before it costs you.</div></div></li>
-          </ul>
-          <div class="tools"><span class="tool">Python</span><span class="tool">SQL</span><span class="tool">Power BI</span><span class="tool">Tableau</span><span class="tool">dbt</span><span class="tool">BigQuery</span><span class="tool">Snowflake</span><span class="tool">Looker</span></div>
-        </div>
-        <div>
-          <div class="chart-card"><div class="cc-l"><span>Revenue trajectory &mdash; before vs. after</span><div class="cc-leg"><div class="cc-li"><div class="cc-d" style="background:#00e5cc"></div>With Aegis</div><div class="cc-li"><div class="cc-d" style="background:#333330"></div>Baseline</div></div></div><canvas id="c1" style="height:80px;max-height:80px"></canvas></div>
-          <div class="fit-box"><div class="fit-l">Best fit if you are</div><p class="fit-t">Making decisions from gut feel or outdated spreadsheets. Preparing for a fundraise and needing clean metrics. Spending hours each week on reports that could run automatically.</p></div>
-        </div>
-      </div>
+
+  <div class="tab-bar">
+    <button class="tab-btn on" onclick="switchTab('a',this)">Data Analytics</button>
+    <button class="tab-btn" onclick="switchTab('b',this)">Machine Learning & AI</button>
+    <button class="tab-btn" onclick="switchTab('c',this)">Cybersecurity</button>
+  </div>
+
+  <div class="tab-panel on" id="t-a">
+    <div>
+      <p class="svc-intro">Most businesses are sitting on data they never use. We map what you have, build the infrastructure to capture it properly, and deliver dashboards and models your team actually relies on to make decisions.</p>
+      <ul class="svc-list">
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Data audit and gap analysis</div><div class="svc-li-desc">What exists, what is missing, and what matters for the decisions you make each week.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Executive dashboard design</div><div class="svc-li-desc">Real-time dashboards in Power BI, Looker, or Tableau built around your actual workflow.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Automated data pipelines</div><div class="svc-li-desc">ETL systems that deliver the right numbers to the right people, every day, automatically.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Revenue and demand forecasting</div><div class="svc-li-desc">Statistical models that tell you what is coming, not just what already happened.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Customer segmentation and churn prediction</div><div class="svc-li-desc">Know who your most valuable customers are and who is about to leave before it costs you.</div></div></li>
+      </ul>
+      <div class="svc-tools"><span class="tool">Python</span><span class="tool">SQL</span><span class="tool">Power BI</span><span class="tool">Tableau</span><span class="tool">dbt</span><span class="tool">BigQuery</span><span class="tool">Snowflake</span></div>
     </div>
-    <div class="panel" id="p2">
-      <div class="p-hdr" onclick="tog('p2')"><span class="p-idx">02</span><span class="p-title">Machine Learning and AI</span><div class="p-arr">+</div></div>
-      <div class="p-body">
-        <div>
-          <p class="p-sub">Practical ML solutions scoped to your actual problem. Every model is explainable, maintainable, and tied to a specific outcome from day one.</p>
-          <ul class="slist">
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Custom ML model development</div><div class="si-d">Built for your specific problem, trained on your data. We assess feasibility before writing a line of code.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">LLM and AI workflow integration</div><div class="si-d">Connect GPT-4, Claude, or open-source models into your existing tools without switching platforms.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Lead scoring and conversion optimization</div><div class="si-d">Rank your pipeline by likelihood to close, not by who last replied to an email.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Model monitoring and retraining</div><div class="si-d">Models drift. We watch performance and retrain on fresh data before accuracy falls.</div></div></li>
-          </ul>
-          <div class="tools"><span class="tool">Python</span><span class="tool">PyTorch</span><span class="tool">scikit-learn</span><span class="tool">OpenAI API</span><span class="tool">Hugging Face</span><span class="tool">MLflow</span><span class="tool">AWS SageMaker</span></div>
-        </div>
-        <div>
-          <div class="chart-card"><div class="cc-l"><span>Model accuracy across training cycles</span><div class="cc-leg"><div class="cc-li"><div class="cc-d" style="background:#00e5cc"></div>Accuracy</div><div class="cc-li"><div class="cc-d" style="background:#f0a500"></div>Target</div></div></div><canvas id="c2" style="height:80px;max-height:80px"></canvas></div>
-          <div class="fit-box"><div class="fit-l">Best fit if you are</div><p class="fit-t">Doing repetitive analysis that patterns could handle. Exploring AI without knowing where to start. Sitting on a prediction problem you are solving manually today.</p></div>
-        </div>
+    <div>
+      <div class="chart-card">
+        <div class="chart-top"><span class="chart-lbl">Revenue trajectory &mdash; before vs. after</span><div class="chart-leg"><div class="chart-li"><div class="chart-dot" style="background:#00fff0"></div>With Aegis</div><div class="chart-li"><div class="chart-dot" style="background:#40536f"></div>Baseline</div></div></div>
+        <div class="chart-wrap"><canvas id="c1"></canvas></div>
       </div>
+      <div class="fit-card"><div class="fit-label">Best fit if you are</div><p class="fit-text">Making decisions from gut feel or outdated spreadsheets. Preparing for a fundraise and needing clean metrics. Spending hours each week on reports that could run automatically.</p></div>
     </div>
-    <div class="panel" id="p3">
-      <div class="p-hdr" onclick="tog('p3')"><span class="p-idx">03</span><span class="p-title">Cybersecurity</span><div class="p-arr">+</div></div>
-      <div class="p-body">
-        <div>
-          <p class="p-sub">For a growing business, a breach is not just expensive, it can be fatal. We find your exposure, close the gaps, and build the security posture you need to protect what you have built.</p>
-          <ul class="slist">
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Security posture review</div><div class="si-d">Plain-language assessment of your biggest risks and what to fix first. No jargon, just priorities.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Penetration testing</div><div class="si-d">We try to breach your systems, external, internal, social engineering, before someone else does.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">SOC 2 and HIPAA readiness</div><div class="si-d">Gap analysis and step-by-step remediation for the certifications your enterprise clients require.</div></div></li>
-            <li class="si"><div class="si-dot"></div><div><div class="si-t">Cloud security review</div><div class="si-d">AWS, GCP, and Azure environments audited against CIS benchmarks.</div></div></li>
-          </ul>
-          <div class="tools"><span class="tool">Nessus</span><span class="tool">Burp Suite</span><span class="tool">Splunk</span><span class="tool">CrowdStrike</span><span class="tool">AWS Security Hub</span><span class="tool">Zero Trust</span></div>
-        </div>
-        <div>
-          <div class="chart-card"><div class="cc-l"><span>Risk score reduction &mdash; 8-week remediation</span><div class="cc-leg"><div class="cc-li"><div class="cc-d" style="background:#ff5555"></div>Risk</div><div class="cc-li"><div class="cc-d" style="background:#00e5cc"></div>Safe threshold</div></div></div><canvas id="c3" style="height:80px;max-height:80px"></canvas></div>
-          <div class="fit-box"><div class="fit-l">Best fit if you are</div><p class="fit-t">Handling customer data without a formal security review. Pursuing enterprise clients who require SOC 2. Unsure what your current exposure actually looks like.</p></div>
-        </div>
+  </div>
+
+  <div class="tab-panel" id="t-b">
+    <div>
+      <p class="svc-intro">Practical ML solutions scoped to your actual business problem. Every model is explainable, maintainable, and tied to a specific outcome from day one. We assess feasibility before writing a line of code.</p>
+      <ul class="svc-list">
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Custom ML model development</div><div class="svc-li-desc">Built for your problem, trained on your data. Scoped carefully before we start building.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">LLM and AI workflow integration</div><div class="svc-li-desc">Connect GPT-4, Claude, or open-source models into your existing tools without switching platforms.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Lead scoring and conversion optimization</div><div class="svc-li-desc">Rank your pipeline by likelihood to close, not just by who last replied to an email.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Model monitoring and retraining</div><div class="svc-li-desc">Models drift. We watch performance and retrain on fresh data before accuracy falls.</div></div></li>
+      </ul>
+      <div class="svc-tools"><span class="tool">Python</span><span class="tool">PyTorch</span><span class="tool">scikit-learn</span><span class="tool">OpenAI API</span><span class="tool">Hugging Face</span><span class="tool">MLflow</span></div>
+    </div>
+    <div>
+      <div class="chart-card">
+        <div class="chart-top"><span class="chart-lbl">Model accuracy across training cycles</span><div class="chart-leg"><div class="chart-li"><div class="chart-dot" style="background:#00fff0"></div>Accuracy</div><div class="chart-li"><div class="chart-dot" style="background:#ffbf45"></div>Target</div></div></div>
+        <div class="chart-wrap"><canvas id="c2"></canvas></div>
       </div>
+      <div class="fit-card"><div class="fit-label">Best fit if you are</div><p class="fit-text">Doing repetitive analysis that patterns could automate. Exploring AI without knowing where to start. Sitting on a prediction problem you are solving manually today.</p></div>
     </div>
+  </div>
+
+  <div class="tab-panel" id="t-c">
+    <div>
+      <p class="svc-intro">For a growing business, a breach is not just expensive — it can be fatal. We identify your exposure, close the gaps, and build the security posture you need to protect what you have built and win enterprise clients.</p>
+      <ul class="svc-list">
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Security posture review</div><div class="svc-li-desc">Plain-language assessment of your biggest risks and what to fix first. No jargon, just priorities.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Penetration testing</div><div class="svc-li-desc">We attempt to breach your systems — external, internal, social engineering — before someone else does.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">SOC 2 and HIPAA readiness</div><div class="svc-li-desc">Gap analysis and step-by-step remediation for the compliance certifications enterprise clients require.</div></div></li>
+        <li class="svc-li"><div class="svc-li-dot"></div><div><div class="svc-li-name">Cloud security review</div><div class="svc-li-desc">AWS, GCP, and Azure audited against CIS benchmarks so your cloud is not a wide-open door.</div></div></li>
+      </ul>
+      <div class="svc-tools"><span class="tool">Nessus</span><span class="tool">Burp Suite</span><span class="tool">Splunk</span><span class="tool">CrowdStrike</span><span class="tool">AWS Security Hub</span></div>
+    </div>
+    <div>
+      <div class="chart-card">
+        <div class="chart-top"><span class="chart-lbl">Risk score &mdash; 8-week remediation</span><div class="chart-leg"><div class="chart-li"><div class="chart-dot" style="background:#ff4d7d"></div>Risk</div><div class="chart-li"><div class="chart-dot" style="background:#00fff0"></div>Safe threshold</div></div></div>
+        <div class="chart-wrap"><canvas id="c3"></canvas></div>
+      </div>
+      <div class="fit-card"><div class="fit-label">Best fit if you are</div><p class="fit-text">Handling customer data without a formal security review. Pursuing enterprise clients who require SOC 2. Genuinely unsure what your current exposure looks like.</p></div>
+    </div>
+  </div>
+
+  <!-- METRICS ROW -->
+  <div class="metrics-row">
+    <div class="metric-card"><span class="metric-val">-62%</span><span class="metric-label">Avg. churn reduction</span><span class="metric-sub">across analytics engagements</span></div>
+    <div class="metric-card"><span class="metric-val">91%</span><span class="metric-label">ML model accuracy</span><span class="metric-sub">deployed models average</span></div>
+    <div class="metric-card"><span class="metric-val">-85%</span><span class="metric-label">Reporting time saved</span><span class="metric-sub">after pipeline automation</span></div>
+    <div class="metric-card"><span class="metric-val">-89%</span><span class="metric-label">Risk score reduction</span><span class="metric-sub">post security remediation</span></div>
   </div>
 </section>
 
-<section class="sec" id="process" style="background:var(--s1)">
-  <div class="sec-top">
-    <span class="sec-idx">02</span>
-    <div>
-      <div class="sec-tag">Process</div>
-      <h2>How an engagement<br><strong>actually works.</strong></h2>
-      <p class="sec-sub">No black boxes. Every engagement follows the same four-phase process so you know exactly what to expect at each stage.</p>
+<!-- PROCESS -->
+<section class="sec dark" id="process">
+  <div class="sec-head">
+    <div class="sec-hl">
+      <span class="sec-num">02 &mdash; Process</span>
+      <h2>How it<br><em>works.</em></h2>
+    </div>
+    <div class="sec-hr">
+      <p class="sec-desc">Every engagement follows the same four-phase process. No black boxes, no surprises — you know exactly what to expect at each stage.</p>
     </div>
   </div>
-  <div class="steps">
-    <div class="step"><span class="step-num">01</span><div class="step-title">Discovery call</div><p class="step-desc">A free 30-minute call where we understand your situation, your goals, and whether we are genuinely the right fit. No pitch. Just questions.</p><div class="step-time">Day 1</div></div>
-    <div class="step"><span class="step-num">02</span><div class="step-title">Audit and scoping</div><p class="step-desc">We assess your current setup and deliver a plain-language findings report with a prioritized action list.</p><div class="step-time">Weeks 1 to 2</div></div>
-    <div class="step"><span class="step-num">03</span><div class="step-title">Build and deliver</div><p class="step-desc">We execute the agreed scope and hand off with documentation and a team walkthrough session.</p><div class="step-time">Weeks 3 to 6</div></div>
-    <div class="step"><span class="step-num">04</span><div class="step-title">Monitor and improve</div><p class="step-desc">For retainer clients, we stay on, watching performance, iterating on what we built, and adapting as your business evolves.</p><div class="step-time">Ongoing</div></div>
+  <div class="process-grid">
+    <div class="proc"><span class="proc-n">01</span><div class="proc-bar"></div><div class="proc-title">Discovery Call</div><p class="proc-desc">A free 30-minute call to understand your situation and whether we are the right fit. No pitch, just honest questions.</p><div class="proc-time">Day 1 &mdash; Free</div></div>
+    <div class="proc"><span class="proc-n">02</span><div class="proc-bar"></div><div class="proc-title">Audit and Scoping</div><p class="proc-desc">We assess your setup and deliver a plain-language findings report with a prioritized action list and clear timeline.</p><div class="proc-time">Weeks 1 to 2</div></div>
+    <div class="proc"><span class="proc-n">03</span><div class="proc-bar"></div><div class="proc-title">Build and Deliver</div><p class="proc-desc">We execute the agreed scope and hand off with full documentation and a walkthrough session for your team.</p><div class="proc-time">Weeks 3 to 6</div></div>
+    <div class="proc"><span class="proc-n">04</span><div class="proc-bar"></div><div class="proc-title">Monitor and Improve</div><p class="proc-desc">Retainer clients get ongoing support — we watch performance, iterate on what we built, and adapt as you grow.</p><div class="proc-time">Ongoing</div></div>
   </div>
 </section>
 
+<!-- INDUSTRIES -->
 <section class="sec" id="industries">
-  <div class="sec-top">
-    <span class="sec-idx">03</span>
-    <div>
-      <div class="sec-tag">Industries</div>
-      <h2>Who we work<br><strong>with best.</strong></h2>
-      <p class="sec-sub">We work across industries but have deep familiarity with several in particular.</p>
+  <div class="sec-head">
+    <div class="sec-hl">
+      <span class="sec-num">03 &mdash; Industries</span>
+      <h2>Industries<br><em>we serve.</em></h2>
+    </div>
+    <div class="sec-hr">
+      <p class="sec-desc">We work across sectors but have particular depth where data, finance, and security intersect.</p>
     </div>
   </div>
   <div class="ind-grid">
-    <div class="ind"><div class="ind-icon">Fintech</div><div class="ind-name">Financial Services</div><p class="ind-desc">Fraud detection, risk modeling, portfolio analytics, and compliance tooling for fintech and financial businesses.</p></div>
-    <div class="ind"><div class="ind-icon">E-commerce</div><div class="ind-name">Retail and E-commerce</div><p class="ind-desc">Demand forecasting, customer segmentation, recommendation engines, and inventory optimization.</p></div>
-    <div class="ind"><div class="ind-icon">Healthcare</div><div class="ind-name">Healthcare and Health Tech</div><p class="ind-desc">HIPAA-compliant data infrastructure, patient analytics, and operational reporting.</p></div>
-    <div class="ind"><div class="ind-icon">SaaS</div><div class="ind-name">SaaS and Tech Startups</div><p class="ind-desc">Churn prediction, product analytics, investor-ready metrics, and AI feature development.</p></div>
-    <div class="ind"><div class="ind-icon">Real Estate</div><div class="ind-name">Real Estate</div><p class="ind-desc">Market analysis, investment modeling, property performance dashboards, and portfolio reporting.</p></div>
-    <div class="ind"><div class="ind-icon">Emerging Markets</div><div class="ind-name">Africa and Emerging Markets</div><p class="ind-desc">Market entry analysis, cross-border investment strategy, and data infrastructure for international expansion.</p></div>
-    <div class="ind"><div class="ind-icon">Professional Services</div><div class="ind-name">Consulting and Services</div><p class="ind-desc">Operational analytics, capacity planning, client profitability analysis, and automated reporting.</p></div>
-    <div class="ind"><div class="ind-icon">Non-profit</div><div class="ind-name">Nonprofits and NGOs</div><p class="ind-desc">Impact measurement, grant reporting dashboards, and donor analytics for mission-driven organizations.</p></div>
+    <div class="ind-card"><div class="ind-tag">Fintech</div><div class="ind-name">Financial Services</div><p class="ind-desc">Fraud detection, risk modeling, portfolio analytics, and compliance tooling.</p></div>
+    <div class="ind-card"><div class="ind-tag">E-commerce</div><div class="ind-name">Retail and E-commerce</div><p class="ind-desc">Demand forecasting, segmentation, recommendation engines, inventory optimization.</p></div>
+    <div class="ind-card"><div class="ind-tag">Healthcare</div><div class="ind-name">Healthcare and Health Tech</div><p class="ind-desc">HIPAA-compliant data infrastructure, patient analytics, operational reporting.</p></div>
+    <div class="ind-card"><div class="ind-tag">SaaS</div><div class="ind-name">SaaS and Tech Startups</div><p class="ind-desc">Churn prediction, product analytics, investor-ready metrics, AI features.</p></div>
+    <div class="ind-card"><div class="ind-tag">Real Estate</div><div class="ind-name">Real Estate</div><p class="ind-desc">Market analysis, investment modeling, property performance dashboards.</p></div>
+    <div class="ind-card"><div class="ind-tag">Emerging Markets</div><div class="ind-name">Africa and Emerging Markets</div><p class="ind-desc">Market entry analysis, cross-border investment, and international expansion.</p></div>
+    <div class="ind-card"><div class="ind-tag">Professional Services</div><div class="ind-name">Consulting and Services</div><p class="ind-desc">Operational analytics, capacity planning, client profitability, automated reporting.</p></div>
+    <div class="ind-card"><div class="ind-tag">Non-profit</div><div class="ind-name">Nonprofits and NGOs</div><p class="ind-desc">Impact measurement, grant reporting dashboards, and donor analytics.</p></div>
   </div>
 </section>
 
-<div class="tools-strip" style="background:var(--s1)">
-  <div class="ts-label">Tools and technologies we work with</div>
-  <div class="ts-grid">
-    <span class="ts-tag">Python</span><span class="ts-tag">SQL</span><span class="ts-tag">R</span><span class="ts-tag">Power BI</span><span class="ts-tag">Tableau</span><span class="ts-tag">Looker</span><span class="ts-tag">dbt</span><span class="ts-tag">Snowflake</span><span class="ts-tag">BigQuery</span><span class="ts-tag">AWS</span><span class="ts-tag">GCP</span><span class="ts-tag">Azure</span><span class="ts-tag">PyTorch</span><span class="ts-tag">scikit-learn</span><span class="ts-tag">OpenAI API</span><span class="ts-tag">Hugging Face</span><span class="ts-tag">MLflow</span><span class="ts-tag">Airflow</span><span class="ts-tag">Nessus</span><span class="ts-tag">Burp Suite</span><span class="ts-tag">Splunk</span><span class="ts-tag">CrowdStrike</span><span class="ts-tag">Excel</span><span class="ts-tag">Google Sheets</span>
+<!-- TOOLS -->
+<div class="tools-band">
+  <div class="tools-label">Tools and technologies</div>
+  <div class="tools-row">
+    <span class="tool-chip">Python</span><span class="tool-chip">SQL</span><span class="tool-chip">R</span><span class="tool-chip">Power BI</span><span class="tool-chip">Tableau</span><span class="tool-chip">Looker</span><span class="tool-chip">dbt</span><span class="tool-chip">Snowflake</span><span class="tool-chip">BigQuery</span><span class="tool-chip">AWS</span><span class="tool-chip">GCP</span><span class="tool-chip">Azure</span><span class="tool-chip">PyTorch</span><span class="tool-chip">scikit-learn</span><span class="tool-chip">OpenAI API</span><span class="tool-chip">Hugging Face</span><span class="tool-chip">MLflow</span><span class="tool-chip">Airflow</span><span class="tool-chip">Nessus</span><span class="tool-chip">Burp Suite</span><span class="tool-chip">Splunk</span><span class="tool-chip">CrowdStrike</span><span class="tool-chip">Excel</span><span class="tool-chip">Google Sheets</span>
   </div>
 </div>
 
-<section class="sec" id="finance">
-  <div class="sec-top">
-    <span class="sec-idx">04</span>
-    <div>
-      <div class="sec-tag" style="color:var(--gold)">Financial Services</div>
-      <h2>Investment strategy<br><strong>backed by data.</strong></h2>
-      <p class="sec-sub">Our finance background is not a footnote, it is the foundation. We bring institutional analytical rigor to founders, investors, and growing businesses who deserve that quality of thinking.</p>
+<!-- FINANCE -->
+<section class="sec dark" id="finance">
+  <div class="sec-head">
+    <div class="sec-hl">
+      <span class="sec-num" style="color:rgba(245,166,35,0.5)">04 &mdash; Finance</span>
+      <h2>Financial<br><em style="color:var(--gold)">services.</em></h2>
+    </div>
+    <div class="sec-hr">
+      <p class="sec-desc">Our finance background is a core differentiator. We bring institutional analytical rigor to founders, investors, and growing businesses who deserve that quality of thinking.</p>
     </div>
   </div>
   <div class="fin-grid">
-    <div class="fc"><div class="fc-bar"></div><div class="fc-id">F.01</div><div class="fc-title">Investment Analysis</div><p class="fc-desc">Data-driven evaluation of equities, funds, and alternative assets. Risk-adjusted return modeling and portfolio analysis so you invest with clarity, not hope.</p><div class="fc-tags"><span class="fc-tag">Equity Research</span><span class="fc-tag">Risk Modeling</span><span class="fc-tag">Portfolio Review</span></div></div>
-    <div class="fc"><div class="fc-bar"></div><div class="fc-id">F.02</div><div class="fc-title">Financial Modeling</div><p class="fc-desc">Three-statement models, DCF valuation, and scenario analysis built for fundraising, acquisition diligence, or internal planning. Auditable and investor-ready.</p><div class="fc-tags"><span class="fc-tag">DCF Valuation</span><span class="fc-tag">Scenario Analysis</span><span class="fc-tag">Investor Decks</span></div></div>
-    <div class="fc"><div class="fc-bar"></div><div class="fc-id">F.03</div><div class="fc-title">Fractional CFO Support</div><p class="fc-desc">Unit economics, cash flow planning, burn rate analysis, and the financial narrative that supports your next funding round. CFO-level thinking without the full-time cost.</p><div class="fc-tags"><span class="fc-tag">Unit Economics</span><span class="fc-tag">Cash Flow</span><span class="fc-tag">Burn Analysis</span></div></div>
-    <div class="fc"><div class="fc-bar"></div><div class="fc-id">F.04</div><div class="fc-title">Emerging Market Analysis</div><p class="fc-desc">Investment and market entry analysis focused on African and international markets. We understand these economies from direct experience, not textbooks.</p><div class="fc-tags"><span class="fc-tag">Africa Markets</span><span class="fc-tag">Market Entry</span><span class="fc-tag">Cross-border</span></div></div>
-    <div class="fc"><div class="fc-bar"></div><div class="fc-id">F.05</div><div class="fc-title">Portfolio Reporting Dashboards</div><p class="fc-desc">Live dashboards for investors who want real-time visibility into performance, risk, and allocation. Replace static monthly PDFs with something actionable.</p><div class="fc-tags"><span class="fc-tag">Live Dashboards</span><span class="fc-tag">Performance</span><span class="fc-tag">Allocation</span></div></div>
-    <div class="fc"><div class="fc-bar"></div><div class="fc-id">F.06</div><div class="fc-title">Financial Literacy Workshops</div><p class="fc-desc">Workshops and one-on-one sessions for founders and early professionals on financial statements, investment fundamentals, and making better money decisions.</p><div class="fc-tags"><span class="fc-tag">Workshops</span><span class="fc-tag">Founders</span><span class="fc-tag">1-on-1</span></div></div>
+    <div class="fin-card"><div class="fin-id">F.01</div><div class="fin-title">Investment Analysis</div><p class="fin-desc">Data-driven evaluation of equities, funds, and alternative assets. Risk-adjusted modeling so you invest with clarity, not hope.</p><div class="fin-tags"><span class="fin-tag">Equity Research</span><span class="fin-tag">Risk Modeling</span><span class="fin-tag">Portfolio Review</span></div></div>
+    <div class="fin-card"><div class="fin-id">F.02</div><div class="fin-title">Financial Modeling</div><p class="fin-desc">Three-statement models, DCF valuation, and scenario analysis for fundraising, acquisition diligence, or internal planning.</p><div class="fin-tags"><span class="fin-tag">DCF Valuation</span><span class="fin-tag">Scenario Analysis</span><span class="fin-tag">Investor Decks</span></div></div>
+    <div class="fin-card"><div class="fin-id">F.03</div><div class="fin-title">Fractional CFO Support</div><p class="fin-desc">Unit economics, cash flow planning, burn rate analysis, and the financial narrative that supports your next funding round.</p><div class="fin-tags"><span class="fin-tag">Unit Economics</span><span class="fin-tag">Cash Flow</span><span class="fin-tag">Burn Analysis</span></div></div>
+    <div class="fin-card"><div class="fin-id">F.04</div><div class="fin-title">Emerging Market Analysis</div><p class="fin-desc">Investment and market entry analysis for African and international markets from direct experience, not textbooks.</p><div class="fin-tags"><span class="fin-tag">Africa Markets</span><span class="fin-tag">Market Entry</span><span class="fin-tag">Cross-border</span></div></div>
+    <div class="fin-card"><div class="fin-id">F.05</div><div class="fin-title">Portfolio Reporting Dashboards</div><p class="fin-desc">Live dashboards for investors who want real-time visibility into performance, risk, and allocation across asset classes.</p><div class="fin-tags"><span class="fin-tag">Live Dashboards</span><span class="fin-tag">Performance</span><span class="fin-tag">Allocation</span></div></div>
+    <div class="fin-card"><div class="fin-id">F.06</div><div class="fin-title">Financial Literacy Workshops</div><p class="fin-desc">Workshops and one-on-one sessions for founders on financial statements, investment fundamentals, and better money decisions.</p><div class="fin-tags"><span class="fin-tag">Workshops</span><span class="fin-tag">Founders</span><span class="fin-tag">1-on-1</span></div></div>
   </div>
-  <div class="fin-disc"><p><strong>Note:</strong> Aegis Analytics provides analytical and strategic support, not licensed investment advice. For regulated advice, we are happy to connect you with licensed professionals in our network.</p></div>
+  <div class="fin-note"><p><strong>Note:</strong> Aegis Analytics provides analytical and strategic support, not licensed investment advice. For regulated advice we are happy to connect you with licensed professionals in our network.</p></div>
 </section>
 
-<section class="sec" id="pricing" style="background:var(--s1)">
-  <div class="sec-top">
-    <span class="sec-idx">05</span>
-    <div>
-      <div class="sec-tag">Pricing</div>
-      <h2>Honest rates.<br><strong>No surprises.</strong></h2>
-      <p class="sec-sub">Priced for early-stage businesses. Every engagement starts with a real conversation, not a proposal you didn't ask for.</p>
+<!-- PRICING -->
+<section class="sec" id="pricing">
+  <div class="sec-head">
+    <div class="sec-hl">
+      <span class="sec-num">05 &mdash; Pricing</span>
+      <h2>Honest<br><em>pricing.</em></h2>
+    </div>
+    <div class="sec-hr">
+      <p class="sec-desc">Priced for early-stage businesses. Every engagement starts with a real conversation, not a proposal you didn't ask for.</p>
     </div>
   </div>
-  <div class="pricing-grid">
-    <div class="pc">
-      <div class="pc-tier">Starter</div>
-      <div class="pc-name">Discovery Sprint</div>
-      <p class="pc-desc">A focused audit with a clear action plan delivered in two weeks.</p>
-      <div class="pc-price">$750</div>
-      <div class="pc-per">One-time &middot; 2-week delivery</div>
-      <div class="pc-line"></div>
-      <ul class="pc-feats"><li>1-hour kickoff call</li><li>Audit of your current setup</li><li>Written findings in plain language</li><li>Prioritized action list</li><li>Follow-up call to review findings</li></ul>
-      <button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get started</button>
+  <div class="price-grid">
+    <div class="p-card">
+      <div class="p-tier">Starter</div>
+      <div class="p-name">Discovery Sprint</div>
+      <p class="p-desc">A focused audit with a clear action plan in two weeks.</p>
+      <div class="p-price">$750</div>
+      <div class="p-per">One-time &middot; 2-week delivery</div>
+      <div class="p-line"></div>
+      <ul class="p-feats"><li>1-hour kickoff call</li><li>Audit of your current setup</li><li>Written findings in plain language</li><li>Prioritized action list</li><li>Follow-up call to review findings</li></ul>
+      <button class="p-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
     </div>
-    <div class="pc feat">
-      <div class="pc-tier">Most requested</div>
-      <div class="pc-name">Project Engagement</div>
-      <p class="pc-desc">A scoped engagement with a defined, measurable deliverable.</p>
-      <div class="pc-price">$2,500+</div>
-      <div class="pc-per">Per project &middot; Scope-dependent</div>
-      <div class="pc-line"></div>
-      <ul class="pc-feats"><li>Discovery sprint included</li><li>Custom deliverable to specification</li><li>Testing, QA and documentation</li><li>Handoff session for your team</li><li>30 days of follow-up support</li></ul>
-      <button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a call</button>
+    <div class="p-card feat">
+      <div class="p-tier">Growth</div>
+      <div class="p-name">Project Engagement</div>
+      <p class="p-desc">A scoped project with a defined, measurable deliverable.</p>
+      <div class="p-price">$2,500+</div>
+      <div class="p-per">Per project &middot; Scope-dependent</div>
+      <div class="p-line"></div>
+      <ul class="p-feats"><li>Discovery sprint included</li><li>Custom deliverable to specification</li><li>Testing, QA and documentation</li><li>Handoff session for your team</li><li>30 days of follow-up support</li></ul>
+      <button class="p-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Book a Call</button>
     </div>
-    <div class="pc">
-      <div class="pc-tier">Ongoing</div>
-      <div class="pc-name">Monthly Retainer</div>
-      <p class="pc-desc">Ongoing access to our team across all four practice areas.</p>
-      <div class="pc-price">$1,000</div>
-      <div class="pc-per">Per month &middot; Cancel anytime</div>
-      <div class="pc-line"></div>
-      <ul class="pc-feats"><li>Up to 10 hours of access monthly</li><li>Priority 24-hour response</li><li>Monthly strategy check-in</li><li>Covers all four practice areas</li><li>Scales as your needs grow</li></ul>
-      <button class="pc-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let's talk</button>
+    <div class="p-card">
+      <div class="p-tier">Scale</div>
+      <div class="p-name">Monthly Retainer</div>
+      <p class="p-desc">Ongoing access across all four practice areas as you grow.</p>
+      <div class="p-price">$1,000</div>
+      <div class="p-per">Per month &middot; Cancel anytime</div>
+      <div class="p-line"></div>
+      <ul class="p-feats"><li>Up to 10 hours of access monthly</li><li>Priority 24-hour response</li><li>Monthly strategy check-in</li><li>Covers all four practice areas</li><li>Scales as your needs grow</li></ul>
+      <button class="p-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Let's Talk</button>
     </div>
   </div>
-  <div class="pricing-note">// Every engagement starts with a conversation, not a proposal. We will tell you honestly whether we are the right fit before you spend a dollar.</div>
+  <div class="price-note">Every engagement starts with a conversation, not a proposal. We will tell you honestly whether we are the right fit before you spend a dollar.</div>
 </section>
 
-<section class="sec" id="faq">
-  <div class="sec-top">
-    <span class="sec-idx">06</span>
-    <div>
-      <div class="sec-tag">FAQ</div>
-      <h2>Questions we get<br><strong>asked most often.</strong></h2>
+<!-- FAQ -->
+<section class="sec dark" id="faq">
+  <div class="sec-head">
+    <div class="sec-hl">
+      <span class="sec-num">06 &mdash; FAQ</span>
+      <h2>Common<br><em>questions.</em></h2>
+    </div>
+    <div class="sec-hr">
+      <p class="sec-desc">The questions we get asked most often before a first call.</p>
     </div>
   </div>
-  <div class="faqs">
-    <div class="faq open" id="faq1"><div class="faq-q" onclick="toggleFaq('faq1')"><span class="faq-qt">Do I need to have my data organised before we start?</span><span class="faq-ic">+</span></div><div class="faq-a">No. Most of our clients come to us specifically because their data is messy or scattered. The Discovery Sprint is designed to assess exactly where you are. You do not need to do any prep work before our first call.</div></div>
-    <div class="faq" id="faq2"><div class="faq-q" onclick="toggleFaq('faq2')"><span class="faq-qt">How is Aegis different from hiring a freelancer or a big agency?</span><span class="faq-ic">+</span></div><div class="faq-a">Freelancers are often narrow specialists. Large agencies are expensive, slow, and built for enterprise clients. Aegis sits in the middle: a small, senior team with broad capability across data, AI, finance, and security, priced for businesses at your stage. You get direct access to the people doing the work, not account managers.</div></div>
-    <div class="faq" id="faq3"><div class="faq-q" onclick="toggleFaq('faq3')"><span class="faq-qt">What if I am not sure which service I need?</span><span class="faq-ic">+</span></div><div class="faq-a">That is exactly what the free Discovery call is for. Book a 30-minute conversation, tell us what is not working, and we will tell you honestly where we can help and what it would realistically take. No upselling, no pressure.</div></div>
-    <div class="faq" id="faq4"><div class="faq-q" onclick="toggleFaq('faq4')"><span class="faq-qt">How long does a typical project take?</span><span class="faq-ic">+</span></div><div class="faq-a">A Discovery Sprint takes two weeks. A full project engagement typically runs four to eight weeks depending on scope. We scope carefully at the start and give you a realistic timeline before you commit to anything.</div></div>
-    <div class="faq" id="faq5"><div class="faq-q" onclick="toggleFaq('faq5')"><span class="faq-qt">Do you work with clients outside the United States?</span><span class="faq-ic">+</span></div><div class="faq-a">Yes. We are California-based but work with clients globally. We have particular experience with African and emerging markets and are comfortable working across time zones. All engagements can be conducted fully remotely.</div></div>
-    <div class="faq" id="faq6"><div class="faq-q" onclick="toggleFaq('faq6')"><span class="faq-qt">Is my data secure when working with you?</span><span class="faq-ic">+</span></div><div class="faq-a">Yes. We follow data handling best practices and can sign NDAs and data processing agreements before any engagement begins. We never share client data with third parties and treat confidentiality as a baseline, not an add-on.</div></div>
+  <div class="faq-list">
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="faq-qt">Do I need to have my data organised before we start?</span><i class="faq-ic">+</i></div><div class="faq-a">No. Most of our clients come to us because their data is messy or scattered. The Discovery Sprint is designed to assess exactly where you are. You do not need to prepare anything before our first call.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="faq-qt">How are you different from a freelancer or a large agency?</span><i class="faq-ic">+</i></div><div class="faq-a">Freelancers are often narrow specialists. Large agencies are expensive and slow, built for enterprise clients. Aegis sits in the middle — a small, senior team with broad capability across data, AI, finance, and security, priced for your stage. You work directly with the people doing the work, not account managers.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="faq-qt">What if I am not sure which service I need?</span><i class="faq-ic">+</i></div><div class="faq-a">That is exactly what the free Discovery call is for. Tell us what is not working and we will tell you honestly where we can help and what it would realistically cost. No upselling, no pressure.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="faq-qt">How long does a typical project take?</span><i class="faq-ic">+</i></div><div class="faq-a">A Discovery Sprint takes two weeks. A full project engagement typically runs four to eight weeks. We always agree on scope and timeline before you commit to anything.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="faq-qt">Do you work with clients outside the United States?</span><i class="faq-ic">+</i></div><div class="faq-a">Yes. We are California-based but work globally. We have particular experience with African and emerging markets and are comfortable across time zones. All engagements can be fully remote.</div></div>
+    <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span class="faq-qt">Is my data secure when working with you?</span><i class="faq-ic">+</i></div><div class="faq-a">Yes. We sign NDAs and data processing agreements before any engagement begins. We never share client data with third parties and treat confidentiality as a baseline, not an add-on.</div></div>
   </div>
 </section>
 
-<section class="sec" id="insights" style="background:var(--s1)">
-  <div class="sec-top">
-    <span class="sec-idx">07</span>
-    <div>
-      <div class="sec-tag">Insights</div>
-      <h2>Ideas worth<br><strong>reading.</strong></h2>
-      <p class="sec-sub">Practical thinking on data, AI, investment strategy, and building a smarter business from scratch.</p>
+<!-- BLOG -->
+<section class="sec" id="insights">
+  <div class="sec-head">
+    <div class="sec-hl">
+      <span class="sec-num">07 &mdash; Insights</span>
+      <h2>Ideas worth<br><em>reading.</em></h2>
+    </div>
+    <div class="sec-hr">
+      <p class="sec-desc">Practical thinking on data, AI, investment strategy, and building a smarter business from scratch.</p>
     </div>
   </div>
   <div class="blog-grid">
-    <div class="bc"><img class="bc-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop" alt="Data analytics"/><div class="bc-body"><div class="bc-meta"><span class="bc-cat">Data Analytics</span><span class="bc-date">May 2025</span></div><div class="bc-title">Five data questions every founder should be able to answer</div><p class="bc-text">Before you build a dashboard, you need to know what decisions you are trying to make. Here are the five that matter most early on.</p><div class="bc-read">Read article &rarr;</div></div></div>
-    <div class="bc"><img class="bc-img" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80&fit=crop" alt="Investment"/><div class="bc-body"><div class="bc-meta"><span class="bc-cat">Investment Strategy</span><span class="bc-date">Apr 2025</span></div><div class="bc-title">How to evaluate an investment without a Bloomberg terminal</div><p class="bc-text">You do not need institutional tools to think clearly about risk and return. A practical framework for founders and early investors.</p><div class="bc-read">Read article &rarr;</div></div></div>
-    <div class="bc"><img class="bc-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80&fit=crop" alt="Security"/><div class="bc-body"><div class="bc-meta"><span class="bc-cat">Cybersecurity</span><span class="bc-date">Mar 2025</span></div><div class="bc-title">Three security gaps that hurt small businesses most</div><p class="bc-text">Most small businesses share the same vulnerabilities. Closing them does not require a large budget or a dedicated team.</p><div class="bc-read">Read article &rarr;</div></div></div>
+    <div class="blog-card"><img class="blog-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&fit=crop" alt="Data analytics"/><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Data Analytics</span><span class="blog-date">May 2025</span></div><div class="blog-title">Five data questions every founder should be able to answer</div><p class="blog-excerpt">Before you build a dashboard, you need to know what decisions you are trying to make. Here are the five that matter most.</p><div class="blog-read">Read article &rarr;</div></div></div>
+    <div class="blog-card"><img class="blog-img" src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80&fit=crop" alt="Investment"/><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Investment Strategy</span><span class="blog-date">Apr 2025</span></div><div class="blog-title">How to evaluate an investment without a Bloomberg terminal</div><p class="blog-excerpt">You do not need institutional tools to think clearly about risk and return. A practical framework for founders and early investors.</p><div class="blog-read">Read article &rarr;</div></div></div>
+    <div class="blog-card"><img class="blog-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80&fit=crop" alt="Cybersecurity"/><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Cybersecurity</span><span class="blog-date">Mar 2025</span></div><div class="blog-title">Three security gaps that hurt small businesses most</div><p class="blog-excerpt">Most small businesses share the same vulnerabilities. Closing them does not require a large budget or a dedicated team.</p><div class="blog-read">Read article &rarr;</div></div></div>
   </div>
 </section>
 
-<section class="sec" id="contact" style="padding:0;border-bottom:none">
+<!-- CONTACT -->
+<section id="contact" style="border-bottom:1px solid var(--border)">
   <div class="contact-split">
     <div class="cl">
       <div class="cl-tag">Free 30-minute consultation</div>
-      <h3>No pitch deck.<br>No pressure.</h3>
-      <p>Tell us what you are working on and we will give you an honest read on where data, AI, finance, or security can actually move the needle and what it would realistically take.</p>
-      <div class="cd-list">
-        <!-- UPDATE: Replace with your real email address -->
-        <div class="cd-row"><div class="cd-lbl">Email</div><div class="cd-val">hello@aegisanalytics.com</div></div>
-        <div class="cd-row"><div class="cd-lbl">Location</div><div class="cd-val">California &mdash; remote-friendly worldwide</div></div>
-        <div class="cd-row"><div class="cd-lbl">Response time</div><div class="cd-val">Within 24 business hours</div></div>
+      <h3 class="contact-title">No pitch deck.<br>No pressure.</h3>
+      <p style="font-size:0.86rem;font-weight:300;color:var(--mid);line-height:1.85;margin-bottom:3rem">Tell us what you are working on and we will give you an honest read on where data, AI, finance, or security can actually move the needle — and what it would realistically take.</p>
+      <div class="c-details">
+        <div class="c-row"><div class="c-label">Email</div><div class="c-val">hello@aegisanalytics.com</div></div>
+        <div class="c-row"><div class="c-label">Location</div><div class="c-val">California &mdash; remote-friendly worldwide</div></div>
+        <div class="c-row"><div class="c-label">Response time</div><div class="c-val">Within 24 business hours</div></div>
       </div>
     </div>
     <div class="cr">
-      <!-- UPDATE: Replace YOUR_FORMSPREE_URL with your endpoint from formspree.io -->
       <form class="form" action="YOUR_FORMSPREE_URL" method="POST">
         <div class="frow">
-          <div class="fg"><label for="fname">First name</label><input type="text" id="fname" name="first_name" placeholder="Jane" required></div>
-          <div class="fg"><label for="lname">Last name</label><input type="text" id="lname" name="last_name" placeholder="Smith" required></div>
+          <div class="fg"><label for="fn">First name</label><input type="text" id="fn" name="first_name" placeholder="Jane" required></div>
+          <div class="fg"><label for="ln">Last name</label><input type="text" id="ln" name="last_name" placeholder="Smith" required></div>
         </div>
-        <div class="fg"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="jane@company.com" required></div>
-        <div class="fg"><label for="company">Company or project</label><input type="text" id="company" name="company" placeholder="Your company name"></div>
+        <div class="fg"><label for="em">Email</label><input type="email" id="em" name="email" placeholder="jane@company.com" required></div>
+        <div class="fg"><label for="co">Company or project</label><input type="text" id="co" name="company" placeholder="Your company name"></div>
         <div class="fg">
-          <label for="service">Service of interest</label>
-          <select id="service" name="service">
-            <option value="">Select...</option>
+          <label for="sv">Service of interest</label>
+          <select id="sv" name="service">
+            <option value="">Select a service...</option>
             <option>Data Analytics and Reporting</option>
             <option>Machine Learning and AI</option>
             <option>Cybersecurity</option>
             <option>Investment Analysis or Financial Strategy</option>
-            <option>Not sure yet &mdash; let's talk</option>
+            <option>Not sure yet — let's talk</option>
           </select>
         </div>
-        <div class="fg"><label for="message">What are you trying to solve?</label><textarea id="message" name="message" rows="4" placeholder="A few sentences is enough."></textarea></div>
-        <button type="submit" class="fsub">Send message</button>
+        <div class="fg"><label for="ms">What are you trying to solve?</label><textarea id="ms" name="message" rows="4" placeholder="A few sentences is enough."></textarea></div>
+        <button type="submit" class="fsub">Send Message</button>
       </form>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="fl">Aegis <span>Analytics</span></div>
-  <div class="fc-copy">&copy; 2025 Aegis Analytics. All rights reserved.</div>
-  <div class="fr"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">LinkedIn</a></div>
+  <div class="f-brand">Aegis <span>Analytics</span></div>
+  <div class="f-copy">&copy; 2025 Aegis Analytics. All rights reserved.</div>
+  <div class="f-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">LinkedIn</a></div>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
-function tog(id){
-  var p=document.getElementById(id);
-  var isOpen=p.classList.contains('open');
-  document.querySelectorAll('.panel').forEach(function(x){x.classList.remove('open')});
-  if(!isOpen){p.classList.add('open');setTimeout(drawCharts,60)}
+var drawn = {};
+var charts = {};
+
+function switchTab(id, btn){
+  document.querySelectorAll('.tab-panel').forEach(function(p){ p.classList.remove('on'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('on'); });
+  document.getElementById('t-' + id).classList.add('on');
+  btn.classList.add('on');
+  window.setTimeout(function(){ drawChart(id); resizeCharts(); }, 80);
 }
-function toggleFaq(id){
-  document.getElementById(id).classList.toggle('open');
+
+function chartOptions(min, max){
+  return {
+    responsive:true,
+    maintainAspectRatio:false,
+    animation:{duration:950,easing:'easeOutQuart'},
+    interaction:{intersect:false,mode:'index'},
+    plugins:{legend:{display:false},tooltip:{enabled:false}},
+    scales:{
+      x:{display:false,grid:{display:false}},
+      y:{display:false,min:min,max:max,grid:{display:false}}
+    },
+    elements:{
+      point:{radius:0,hoverRadius:4},
+      line:{tension:0.46,borderWidth:3,capBezierPoints:true}
+    }
+  };
 }
-function toggleMenu(){
-  document.getElementById('mobileMenu').classList.toggle('open');
+
+function glowGradient(ctx, color){
+  var area = ctx.chart.chartArea;
+  if(!area) return color;
+  var g = ctx.chart.ctx.createLinearGradient(0, area.top, 0, area.bottom);
+  if(color === 'teal'){
+    g.addColorStop(0,'rgba(0,255,240,0.30)');
+    g.addColorStop(1,'rgba(0,255,240,0.01)');
+  } else if(color === 'red'){
+    g.addColorStop(0,'rgba(255,77,125,0.28)');
+    g.addColorStop(1,'rgba(255,77,125,0.01)');
+  } else {
+    g.addColorStop(0,'rgba(108,168,255,0.24)');
+    g.addColorStop(1,'rgba(108,168,255,0.01)');
+  }
+  return g;
 }
-var base={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false,min:0,max:120}},elements:{point:{radius:0},line:{tension:0.4,borderWidth:2}}};
-var drawn=false;
-function drawCharts(){
-  if(drawn)return;drawn=true;
-  var c1=document.getElementById('c1');
-  if(c1)new Chart(c1,{type:'line',data:{labels:['J','F','M','A','M','J','J','A','S','O','N','D'],datasets:[
-    {data:[40,42,41,47,55,64,71,78,83,89,94,100],borderColor:'#00e5cc',backgroundColor:'rgba(0,229,204,0.07)',fill:true},
-    {data:[40,41,42,43,43,44,44,45,45,46,46,47],borderColor:'rgba(255,255,255,0.08)',borderDash:[4,3],fill:false}
-  ]},options:Object.assign({},base)});
-  var c2=document.getElementById('c2');
-  if(c2)new Chart(c2,{type:'line',data:{labels:['1','2','3','4','5','6','7','8'],datasets:[
-    {data:[57,64,72,78,83,87,90,92],borderColor:'#00e5cc',backgroundColor:'rgba(0,229,204,0.07)',fill:true},
-    {data:[80,80,80,80,80,80,80,80],borderColor:'#f0a500',borderDash:[4,3],fill:false}
-  ]},options:Object.assign({},base)});
-  var c3=document.getElementById('c3');
-  if(c3)new Chart(c3,{type:'line',data:{labels:['W1','W2','W3','W4','W5','W6','W7','W8'],datasets:[
-    {data:[93,85,75,62,46,30,17,9],borderColor:'#ff5555',backgroundColor:'rgba(255,85,85,0.07)',fill:true},
-    {data:[25,25,25,25,25,25,25,25],borderColor:'#00e5cc',borderDash:[4,3],fill:false}
-  ]},options:Object.assign({},base)});
+
+function drawChart(id){
+  if(drawn[id]) return;
+  var canvas = document.getElementById('c' + (id === 'a' ? '1' : id === 'b' ? '2' : '3'));
+  if(!canvas || typeof Chart === 'undefined') return;
+  drawn[id] = true;
+
+  if(id === 'a'){
+    charts[id] = new Chart(canvas,{type:'line',data:{labels:['J','F','M','A','M','J','J','A','S','O','N','D'],datasets:[
+      {data:[42,44,43,48,57,66,73,80,85,91,96,102],borderColor:'#00fff0',backgroundColor:function(ctx){return glowGradient(ctx,'teal')},fill:true},
+      {data:[42,43,44,44,45,45,46,46,47,47,48,48],borderColor:'rgba(64,83,111,0.95)',borderDash:[5,4],fill:false}
+    ]},options:chartOptions(35,110)});
+  } else if(id === 'b'){
+    charts[id] = new Chart(canvas,{type:'line',data:{labels:['1','2','3','4','5','6','7','8'],datasets:[
+      {data:[58,65,72,78,83,87,90,92],borderColor:'#00fff0',backgroundColor:function(ctx){return glowGradient(ctx,'blue')},fill:true},
+      {data:[80,80,80,80,80,80,80,80],borderColor:'rgba(255,191,69,0.85)',borderDash:[5,4],fill:false}
+    ]},options:chartOptions(40,100)});
+  } else {
+    charts[id] = new Chart(canvas,{type:'line',data:{labels:['W1','W2','W3','W4','W5','W6','W7','W8'],datasets:[
+      {data:[93,85,75,62,46,30,17,9],borderColor:'#ff4d7d',backgroundColor:function(ctx){return glowGradient(ctx,'red')},fill:true},
+      {data:[25,25,25,25,25,25,25,25],borderColor:'rgba(0,255,240,0.76)',borderDash:[5,4],fill:false}
+    ]},options:chartOptions(0,100)});
+  }
 }
-document.addEventListener('DOMContentLoaded',drawCharts);
+
+function resizeCharts(){
+  Object.keys(charts).forEach(function(k){ if(charts[k]) charts[k].resize(); });
+}
+
+document.addEventListener('DOMContentLoaded',function(){ drawChart('a'); resizeCharts(); });
+window.addEventListener('resize', resizeCharts);
 </script>
 </body>
 </html>
