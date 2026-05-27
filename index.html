@@ -42,13 +42,13 @@ section{position:relative}.sec{padding:8rem 4rem;border-bottom:1px solid var(--l
 .hero-right-panel{position:relative;z-index:2;display:flex;align-items:stretch;align-self:stretch}.hero-eyebrow{display:inline-flex;gap:10px;align-items:center;margin-bottom:2rem;padding:.48rem .8rem;border:1px solid rgba(0,229,204,.22);background:rgba(0,229,204,.05);border-radius:999px}.live-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;box-shadow:0 0 16px var(--teal);animation:pulse 2s infinite}@keyframes pulse{50%{opacity:.45;transform:scale(.8)}}.eyebrow-text{font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
 .hero-h1{font-family:var(--heading);font-size:clamp(3.9rem,8.3vw,8.7rem);font-weight:800;letter-spacing:-.06em;line-height:.91;color:var(--white);margin-bottom:2rem;text-shadow:0 0 48px rgba(0,229,204,.10)}.hero-h1 span{display:block}.hero-h1 .fade{color:#44536a}.hero-desc{font-size:1.08rem;color:var(--soft);font-weight:300;max-width:690px;line-height:1.9;margin-bottom:2.6rem}
 .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}.btn-p,.btn-o{font-family:var(--body);font-size:.76rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;padding:1rem 1.7rem;cursor:pointer;transition:.22s}.btn-p{border:0;color:#020406;background:linear-gradient(135deg,var(--teal),var(--blue));box-shadow:0 16px 45px rgba(0,229,204,.16)}.btn-p:hover{transform:translateY(-2px);box-shadow:0 24px 60px rgba(0,229,204,.25)}.btn-o{background:rgba(255,255,255,.025);border:1px solid var(--line2);color:var(--off)}.btn-o:hover{border-color:var(--teal);color:var(--teal);background:rgba(0,229,204,.05)}
-.hero-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:5rem}.hs{background:rgba(8,12,19,.78);padding:1.8rem;backdrop-filter:blur(10px)}.hs-n{font-family:var(--heading);font-size:2.55rem;font-weight:800;color:var(--white);line-height:1}.hs-l{display:block;margin-top:.35rem;font-size:.62rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
+.hero-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:5rem}.hs{background:rgba(8,12,19,.85);padding:2rem 1.8rem;backdrop-filter:blur(10px);transition:.25s}.hs:hover{background:rgba(0,229,204,.04)}.hs-n{font-family:var(--heading);font-size:2.8rem;font-weight:800;color:var(--white);line-height:1;display:block}.hs-n.teal{color:var(--teal)}.hs-l{display:block;margin-top:.4rem;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);line-height:1.4}
 
 /* MARQUEE */
 .marquee{background:linear-gradient(90deg,var(--teal),#40b8ff,var(--teal));overflow:hidden;padding:.78rem 0}.marquee-track{display:flex;width:max-content;animation:scroll 24s linear infinite}@keyframes scroll{to{transform:translateX(-50%)}}.m-item{font-size:.68rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:rgba(0,0,0,.75);padding:0 2rem;white-space:nowrap}.m-item::after{content:"◆";font-size:.35rem;margin-left:2rem;opacity:.4}
 
 /* OUTCOME BAND */
-.results{padding:4.5rem 4rem;background:var(--bg2);border-bottom:1px solid var(--line)}.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.r-item{padding:1.8rem;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.012));border-radius:22px}.r-num{font-family:var(--heading);font-size:1.9rem;font-weight:800;color:var(--white)}.r-label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.65;margin-top:.35rem}
+.results{padding:4.5rem 4rem;background:var(--bg2);border-bottom:1px solid var(--line)}.results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}.r-item{padding:2.2rem 1.8rem;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));border-radius:22px;transition:.25s}.r-item:hover{border-color:rgba(0,229,204,.2);transform:translateY(-3px)}.r-num{font-family:var(--heading);font-size:2.8rem;font-weight:800;color:var(--white);line-height:1;display:block}.r-label{display:block;font-size:.7rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);line-height:1.7;margin-top:.5rem}
 
 /* SERVICES */
 .tab-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}.tab-btn{font-family:var(--body);font-size:.7rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;border:1px solid var(--line2);background:rgba(255,255,255,.02);color:var(--muted);padding:.85rem 1.15rem;cursor:pointer;border-radius:999px;transition:.22s}.tab-btn:hover,.tab-btn.on{color:#020406;background:linear-gradient(135deg,var(--teal),var(--blue));border-color:transparent}
@@ -449,13 +449,40 @@ h2{
 
   </div><!-- end hero-inner -->
   <div class="hero-stats reveal show">
-    <div class="hs"><span class="hs-n">$750</span><span class="hs-l">Starting engagement</span></div><div class="hs"><span class="hs-n">24h</span><span class="hs-l">Response guarantee</span></div><div class="hs"><span class="hs-n">4</span><span class="hs-l">Integrated practice areas</span></div><div class="hs"><span class="hs-n">Global</span><span class="hs-l">Remote client reach</span></div>
+    <div class="hs"><span class="hs-n">$750</span><span class="hs-l">Starting engagement</span></div>
+    <div class="hs"><span class="hs-n">24h</span><span class="hs-l">Response guarantee</span></div>
+    <div class="hs"><span class="hs-n" style="color:var(--teal)">-62%</span><span class="hs-l">Average churn reduction</span></div>
+    <div class="hs"><span class="hs-n" style="color:var(--green)">91%</span><span class="hs-l">ML model accuracy rate</span></div>
   </div>
 </section>
 
 <div class="marquee" aria-hidden="true"><div class="marquee-track"><span class="m-item">Data Analytics</span><span class="m-item">AI Integration</span><span class="m-item">Financial Modeling</span><span class="m-item">Cybersecurity</span><span class="m-item">Executive Dashboards</span><span class="m-item">Forecasting</span><span class="m-item">Risk Strategy</span><span class="m-item">Fractional CFO</span><span class="m-item">Data Analytics</span><span class="m-item">AI Integration</span><span class="m-item">Financial Modeling</span><span class="m-item">Cybersecurity</span><span class="m-item">Executive Dashboards</span><span class="m-item">Forecasting</span><span class="m-item">Risk Strategy</span><span class="m-item">Fractional CFO</span></div></div>
 
-<div class="results"><div class="wrap results-grid reveal"><div class="r-item"><span class="r-num">85%</span><span class="r-label">Average reporting time reduction through pipeline automation</span></div><div class="r-item"><span class="r-num">4</span><span class="r-label">Integrated practice areas under one strategic framework</span></div><div class="r-item"><span class="r-num">2 wk</span><span class="r-label">Discovery sprint to audit and identify priorities</span></div><div class="r-item"><span class="r-num">1</span><span class="r-label">Unified decision framework across growth, risk, and operations</span></div></div></div>
+<div class="results">
+  <div class="wrap">
+    <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:1.8rem;display:flex;align-items:center;gap:10px">
+      <span style="display:block;width:20px;height:1px;background:var(--teal)"></span>
+      Why data, security, and financial strategy matter right now
+    </div>
+  </div>
+  <div class="wrap results-grid reveal">
+  <div class="r-item">
+    <span class="r-num" style="color:var(--teal)">60%</span>
+    <span class="r-label">of SMBs make key business decisions without reliable data</span>
+  </div>
+  <div class="r-item">
+    <span class="r-num" style="color:#ff5c72">$4.5M</span>
+    <span class="r-label">average cost of a data breach for a small business</span>
+  </div>
+  <div class="r-item">
+    <span class="r-num" style="color:var(--teal)">3x</span>
+    <span class="r-label">faster decision-making with real-time analytics dashboards</span>
+  </div>
+  <div class="r-item">
+    <span class="r-num" style="color:var(--gold)">78%</span>
+    <span class="r-label">of AI projects fail without the right data foundation in place</span>
+  </div>
+</div></div>
 
 <section class="sec" id="services"><div class="wrap">
   <div class="sec-head reveal"><span class="sec-num">01 — Services</span><h2>Integrated services for <em>higher-quality decisions.</em></h2><p class="sec-desc">Aegis Analytics is built for businesses that need more than isolated dashboards or one-off technical projects. We connect analytics, AI, finance, and cybersecurity so that strategy, operations, and risk management are fully aligned.</p></div>
