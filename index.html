@@ -2,6 +2,8 @@
 <html lang="en" id="top-page">
 <head>
 <meta charset="UTF-8" />
+<meta name="theme-color" content="#05070c">
+<meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Aegis Analytics — Aegis Analytics &mdash; California</title>
 <meta name="description" content="Aegis Analytics helps ambitious companies use data analytics, AI, financial strategy, and cybersecurity to reduce risk, automate operations, and make smarter decisions." />
@@ -92,10 +94,76 @@ footer{background:#0d131d;padding:2rem 4rem;display:flex;align-items:center;just
 
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease, transform .75s ease}.reveal.show{opacity:1;transform:none}
 
+/* ── TABLET ── */
 @media(max-width:1020px){
-  nav{padding:0 1.4rem}.nav-items,.nav-book{display:none}.ham{display:flex}.hero,.sec,.lead{padding-left:1.4rem;padding-right:1.4rem}.hero-h1{font-size:clamp(3.2rem,14vw,5rem)}.hero-inner{grid-template-columns:1fr}.hero-right-panel{display:none}.hero-stats,.results-grid,.why-grid,.case-grid,.client-grid,.process-grid,.ind-grid,.fin-grid,.price-grid{grid-template-columns:1fr 1fr}.tab-panel.on,.founder-wrap,.contact-split,.lead-box{grid-template-columns:1fr}.founder-photo{min-height:320px}.lead-form{flex-direction:column}.lead-form input{min-width:0;width:100%}.cl,.cr{padding:4rem 1.4rem}footer{padding:1.5rem;flex-direction:column;gap:.8rem;text-align:center}
+  nav{padding:0 1.4rem}
+  .nav-items,.nav-book{display:none}
+  .ham{display:flex}
+  .hero,.sec,.lead{padding-left:1.6rem;padding-right:1.6rem}
+  .hero-inner{grid-template-columns:1fr}
+  .hero-right-panel{display:none}
+  .hero-h1{font-size:clamp(3rem,12vw,5rem)}
+  .hero-stats{grid-template-columns:1fr 1fr;gap:0}
+  .results-grid,.why-grid,.case-grid,.client-grid,.process-grid,.ind-grid,.fin-grid,.price-grid{grid-template-columns:1fr 1fr}
+  .tab-panel.on{grid-template-columns:1fr}
+  .founder-wrap,.contact-split,.lead-box{grid-template-columns:1fr}
+  .founder-photo{min-height:320px}
+  .lead-form{flex-direction:column}
+  .lead-form input{min-width:0;width:100%}
+  .cl,.cr{padding:3.5rem 1.6rem}
+  footer{padding:1.5rem;flex-direction:column;gap:.8rem;text-align:center}
+  .tools-band{padding:2.5rem 1.6rem}
+  .marquee-strip{padding:.8rem 0}
 }
-@media(max-width:640px){.hero-stats,.results-grid,.why-grid,.case-grid,.client-grid,.process-grid,.ind-grid,.fin-grid,.price-grid{grid-template-columns:1fr}.frow{grid-template-columns:1fr}.chart-top{align-items:flex-start;flex-direction:column}.hero{padding-top:7rem}.sec{padding-top:5rem;padding-bottom:5rem}.case-metrics{grid-template-columns:1fr}}
+
+/* ── MOBILE ── */
+@media(max-width:640px){
+  nav{height:56px;padding:0 1.2rem}
+  .hero{padding:6.5rem 1.2rem 3rem;min-height:auto}
+  .hero-h1{font-size:clamp(2.6rem,11vw,3.8rem);line-height:1.0}
+  .hero-desc{font-size:.92rem;margin-bottom:2rem}
+  .hero-ctas{flex-direction:column;gap:.8rem;margin-bottom:3rem}
+  .btn-p,.btn-o{width:100%;text-align:center;padding:.95rem}
+  .hero-stats{grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+  .hs{padding:1.2rem .8rem}
+  .hs-n{font-size:2rem}
+  .sec{padding:3.5rem 1.2rem}
+  .sec h2{font-size:clamp(2rem,9vw,3rem)}
+  .sec-head{margin-bottom:2.5rem}
+  .sec-desc{font-size:.9rem}
+  .results-grid,.ind-grid,.fin-grid,.price-grid,.process-grid,.why-grid,.case-grid,.client-grid{grid-template-columns:1fr}
+  .r-item{padding:1.5rem 1.2rem}
+  .r-num{font-size:2.2rem}
+  .tab-bar{gap:0;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .tab-bar::-webkit-scrollbar{display:none}
+  .tab-btn{font-size:.65rem;padding:.9rem 1rem .9rem 0;white-space:nowrap}
+  .tab-panel.on{grid-template-columns:1fr;gap:2rem}
+  .frow{grid-template-columns:1fr}
+  .chart-top{flex-direction:column;align-items:flex-start;gap:.5rem}
+  .chart-wrap{height:140px}
+  .case-metrics{grid-template-columns:1fr 1fr}
+  .founder-wrap{grid-template-columns:1fr}
+  .founder-photo{min-height:260px}
+  .contact-split{grid-template-columns:1fr}
+  .cl,.cr{padding:3rem 1.2rem}
+  .lead-box{padding:1.8rem 1.2rem}
+  .lead h2{font-size:clamp(1.6rem,7vw,2.4rem)}
+  .lead-form{flex-direction:column;gap:.7rem}
+  .lead-form input,.lead-form button{width:100%;padding:.9rem 1rem}
+  .process-grid{grid-template-columns:1fr}
+  .proc{padding:1.5rem 0;border-right:none;border-bottom:1px solid var(--line)}
+  .proc:last-child{border-bottom:none}
+  footer{padding:1.5rem 1.2rem;flex-direction:column;gap:.8rem;text-align:center}
+  .f-links{justify-content:center}
+  .blog-grid{grid-template-columns:1fr}
+  .tools-band{padding:2.5rem 1.2rem}
+  .tools-row{gap:6px}
+  .tool-chip{font-size:.6rem;padding:.3rem .7rem}
+  .faq-qt{font-size:.85rem}
+  .dash-panel{min-height:auto}
+  .mob-menu a{font-size:.95rem}
+  .sec-num{font-size:.6rem}
+}
 
 body{
   letter-spacing:-0.01em;
@@ -365,6 +433,22 @@ h2{
 .dash-status{display:flex;align-items:center;gap:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(0,212,136,0.8)}
 .dash-status-dot{width:6px;height:6px;background:#00d488;border-radius:50%;box-shadow:0 0 6px #00d488}
 .dash-updated{font-size:0.56rem;color:var(--muted)}
+
+/* ── TOUCH & ACCESSIBILITY ── */
+@media(hover:none){
+  .btn-p:hover,.btn-o:hover{transform:none;opacity:1}
+  .btn-p:active{opacity:.85}
+  .btn-o:active{border-color:var(--teal);color:var(--teal)}
+  .faq-q{padding:1.6rem 0}
+  .tab-btn{padding:1.1rem 1.2rem 1.1rem 0}
+  .r-item:hover{transform:none}
+  .ind-card:hover{background:var(--bg2)}
+  .price-card:hover{border-color:var(--line)}
+  .blog-card:hover .blog-img{filter:grayscale(30%) brightness(.65)}
+}
+button,a,[role="button"]{-webkit-tap-highlight-color:transparent}
+input,select,textarea{font-size:16px !important}
+
 </style>
 </head>
 <body>
