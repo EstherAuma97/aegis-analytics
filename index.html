@@ -37,7 +37,9 @@ section{position:relative}.sec{padding:8rem 4rem;border-bottom:1px solid var(--l
 /* HERO */
 .hero{min-height:100vh;padding:9rem 4rem 5rem;display:flex;flex-direction:column;justify-content:space-between;border-bottom:1px solid var(--line);overflow:hidden;background:radial-gradient(circle at 18% 12%,rgba(0,255,240,.15),transparent 30%),radial-gradient(circle at 85% 70%,rgba(77,159,255,.11),transparent 36%),linear-gradient(180deg,#05070c 0%,#09101a 100%)}
 .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.026) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.026) 1px,transparent 1px);background-size:64px 64px;mask-image:linear-gradient(to bottom,rgba(0,0,0,1),rgba(0,0,0,.45));pointer-events:none}.hero::after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;right:-190px;top:18%;background:radial-gradient(circle,rgba(0,229,204,.08),transparent 62%);filter:blur(8px);animation:float 9s ease-in-out infinite}@keyframes float{50%{transform:translateY(28px) translateX(-12px)}}
-.hero-content{position:relative;z-index:2;max-width:960px}.hero-eyebrow{display:inline-flex;gap:10px;align-items:center;margin-bottom:2rem;padding:.48rem .8rem;border:1px solid rgba(0,229,204,.22);background:rgba(0,229,204,.05);border-radius:999px}.live-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;box-shadow:0 0 16px var(--teal);animation:pulse 2s infinite}@keyframes pulse{50%{opacity:.45;transform:scale(.8)}}.eyebrow-text{font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+.hero-content{position:relative;z-index:2;max-width:600px}
+.hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;min-height:calc(100vh - 220px)}
+.hero-right-panel{position:relative;z-index:2}.hero-eyebrow{display:inline-flex;gap:10px;align-items:center;margin-bottom:2rem;padding:.48rem .8rem;border:1px solid rgba(0,229,204,.22);background:rgba(0,229,204,.05);border-radius:999px}.live-dot{width:8px;height:8px;background:var(--teal);border-radius:50%;box-shadow:0 0 16px var(--teal);animation:pulse 2s infinite}@keyframes pulse{50%{opacity:.45;transform:scale(.8)}}.eyebrow-text{font-size:.66rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
 .hero-h1{font-family:var(--heading);font-size:clamp(3.9rem,8.3vw,8.7rem);font-weight:800;letter-spacing:-.06em;line-height:.91;color:var(--white);margin-bottom:2rem;text-shadow:0 0 48px rgba(0,229,204,.10)}.hero-h1 span{display:block}.hero-h1 .fade{color:#44536a}.hero-desc{font-size:1.08rem;color:var(--soft);font-weight:300;max-width:690px;line-height:1.9;margin-bottom:2.6rem}
 .hero-ctas{display:flex;gap:1rem;flex-wrap:wrap}.btn-p,.btn-o{font-family:var(--body);font-size:.76rem;font-weight:800;letter-spacing:.11em;text-transform:uppercase;padding:1rem 1.7rem;cursor:pointer;transition:.22s}.btn-p{border:0;color:#020406;background:linear-gradient(135deg,var(--teal),var(--blue));box-shadow:0 16px 45px rgba(0,229,204,.16)}.btn-p:hover{transform:translateY(-2px);box-shadow:0 24px 60px rgba(0,229,204,.25)}.btn-o{background:rgba(255,255,255,.025);border:1px solid var(--line2);color:var(--off)}.btn-o:hover{border-color:var(--teal);color:var(--teal);background:rgba(0,229,204,.05)}
 .hero-stats{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);margin-top:5rem}.hs{background:rgba(8,12,19,.78);padding:1.8rem;backdrop-filter:blur(10px)}.hs-n{font-family:var(--heading);font-size:2.55rem;font-weight:800;color:var(--white);line-height:1}.hs-l{display:block;margin-top:.35rem;font-size:.62rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--muted)}
@@ -91,7 +93,7 @@ footer{background:#0d131d;padding:2rem 4rem;display:flex;align-items:center;just
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease, transform .75s ease}.reveal.show{opacity:1;transform:none}
 
 @media(max-width:1020px){
-  nav{padding:0 1.4rem}.nav-items,.nav-book{display:none}.ham{display:flex}.hero,.sec,.lead{padding-left:1.4rem;padding-right:1.4rem}.hero-h1{font-size:clamp(3.2rem,14vw,5rem)}.hero-stats,.results-grid,.why-grid,.case-grid,.client-grid,.process-grid,.ind-grid,.fin-grid,.price-grid{grid-template-columns:1fr 1fr}.tab-panel.on,.founder-wrap,.contact-split,.lead-box{grid-template-columns:1fr}.founder-photo{min-height:320px}.lead-form{flex-direction:column}.lead-form input{min-width:0;width:100%}.cl,.cr{padding:4rem 1.4rem}footer{padding:1.5rem;flex-direction:column;gap:.8rem;text-align:center}
+  nav{padding:0 1.4rem}.nav-items,.nav-book{display:none}.ham{display:flex}.hero,.sec,.lead{padding-left:1.4rem;padding-right:1.4rem}.hero-h1{font-size:clamp(3.2rem,14vw,5rem)}.hero-inner{grid-template-columns:1fr}.hero-right-panel{display:none}.hero-stats,.results-grid,.why-grid,.case-grid,.client-grid,.process-grid,.ind-grid,.fin-grid,.price-grid{grid-template-columns:1fr 1fr}.tab-panel.on,.founder-wrap,.contact-split,.lead-box{grid-template-columns:1fr}.founder-photo{min-height:320px}.lead-form{flex-direction:column}.lead-form input{min-width:0;width:100%}.cl,.cr{padding:4rem 1.4rem}footer{padding:1.5rem;flex-direction:column;gap:.8rem;text-align:center}
 }
 @media(max-width:640px){.hero-stats,.results-grid,.why-grid,.case-grid,.client-grid,.process-grid,.ind-grid,.fin-grid,.price-grid{grid-template-columns:1fr}.frow{grid-template-columns:1fr}.chart-top{align-items:flex-start;flex-direction:column}.hero{padding-top:7rem}.sec{padding-top:5rem;padding-bottom:5rem}.case-metrics{grid-template-columns:1fr}}
 
@@ -335,8 +337,32 @@ h2{
 }
 
 
-.blog-img-wrap img:hover { filter: grayscale(0%) brightness(0.75) !important; }
-.blog-card:hover .blog-img-wrap img { filter: grayscale(0%) brightness(0.75) !important; }
+/* HERO DASHBOARD PANEL */
+.dash-panel{background:rgba(13,19,30,0.9);border:1px solid rgba(0,229,204,0.18);border-radius:20px;padding:1.4rem;backdrop-filter:blur(20px);box-shadow:0 40px 100px rgba(0,0,0,0.5),0 0 60px rgba(0,229,204,0.06)}
+.dash-topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.2rem}
+.dash-title{font-size:0.62rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal)}
+.dash-live{display:flex;align-items:center;gap:6px;font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(0,229,204,0.6)}
+.dash-live-dot{width:6px;height:6px;background:var(--teal);border-radius:50%;animation:pulse 1.5s infinite;box-shadow:0 0 8px var(--teal)}
+.dash-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,0.06);border-radius:10px;overflow:hidden;margin-bottom:1.2rem}
+.dash-m{background:rgba(8,12,19,0.8);padding:0.9rem 0.8rem}
+.dash-m-val{font-family:var(--heading);font-size:1.4rem;font-weight:800;color:var(--white);line-height:1;display:block}
+.dash-m-val.up{color:#00d488}
+.dash-m-val.down{color:#ff5c72}
+.dash-m-val.gold{color:var(--gold)}
+.dash-m-label{font-size:0.55rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-top:0.25rem;display:block}
+.dash-chart-area{margin-bottom:1.2rem}
+.dash-chart-label{font-size:0.58rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem;display:flex;justify-content:space-between}
+.dash-chart-label span{color:var(--teal);font-size:0.65rem}
+.dash-rows{display:flex;flex-direction:column;gap:0.5rem}
+.dash-row{display:flex;align-items:center;gap:0.8rem}
+.dash-row-label{font-size:0.62rem;font-weight:600;color:rgba(145,180,230,0.6);min-width:90px}
+.dash-bar-bg{flex:1;height:5px;background:rgba(255,255,255,0.06);border-radius:3px;overflow:hidden}
+.dash-bar-fill{height:100%;border-radius:3px;transition:width 1.5s ease}
+.dash-row-val{font-size:0.62rem;font-weight:800;color:var(--off);min-width:36px;text-align:right}
+.dash-footer{display:flex;align-items:center;justify-content:space-between;padding-top:0.9rem;border-top:1px solid rgba(255,255,255,0.06)}
+.dash-status{display:flex;align-items:center;gap:8px;font-size:0.6rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(0,212,136,0.8)}
+.dash-status-dot{width:6px;height:6px;background:#00d488;border-radius:50%;box-shadow:0 0 6px #00d488}
+.dash-updated{font-size:0.56rem;color:var(--muted)}
 </style>
 </head>
 <body>
@@ -354,12 +380,72 @@ h2{
 <div class="mob-menu" id="mob"><button class="mob-x" onclick="document.getElementById('mob').classList.remove('show')">×</button><a href="#services" onclick="closeMob()">Services</a><a href="#case-studies" onclick="closeMob()">Outcomes</a><a href="#why" onclick="closeMob()">Why Aegis</a><a href="#finance" onclick="closeMob()">Finance</a><a href="#pricing" onclick="closeMob()">Pricing</a><a href="#contact" onclick="closeMob()">Contact</a><button class="mob-cta" onclick="scrollToId('contact');closeMob()">Book Strategy Call</button></div>
 
 <section class="hero" id="top">
-  <div class="hero-content reveal show">
+  <div class="hero-inner"><div class="hero-content reveal show">
     <div class="hero-eyebrow"><span class="live-dot"></span><span class="eyebrow-text">Strategic Intelligence for Modern Businesses</span></div>
     <h1 class="hero-h1">Helping ambitious companies <span class="accent">turn complexity</span><span class="fade">into clarity.</span></h1>
     <p class="hero-desc">Aegis Analytics helps startups and growing businesses transform scattered data, operational risk, and complex decisions into clear strategy, intelligent systems, and measurable growth.</p>
     <div class="hero-ctas"><button class="btn-p" onclick="scrollToId('contact')">Book Strategy Call</button><button class="btn-o" onclick="scrollToId('case-studies')">View Case Studies</button></div>
   </div>
+
+  <!-- HERO DASHBOARD PANEL -->
+  <div class="hero-right-panel reveal show">
+    <div class="dash-panel">
+      <div class="dash-topbar">
+        <span class="dash-title">Aegis Intelligence Dashboard</span>
+        <span class="dash-live"><span class="dash-live-dot"></span>Live</span>
+      </div>
+
+      <div class="dash-metrics">
+        <div class="dash-m">
+          <span class="dash-m-val up" id="dm1">+91.4%</span>
+          <span class="dash-m-label">Model accuracy</span>
+        </div>
+        <div class="dash-m">
+          <span class="dash-m-val down" id="dm2">-62%</span>
+          <span class="dash-m-label">Churn rate</span>
+        </div>
+        <div class="dash-m">
+          <span class="dash-m-val gold" id="dm3">+18.3%</span>
+          <span class="dash-m-label">Revenue lift</span>
+        </div>
+      </div>
+
+      <div class="dash-chart-area">
+        <div class="dash-chart-label">Revenue trajectory <span>12-month view</span></div>
+        <canvas id="hero-chart" style="height:90px;display:block;width:100%"></canvas>
+      </div>
+
+      <div class="dash-rows">
+        <div class="dash-row">
+          <span class="dash-row-label">Data pipelines</span>
+          <div class="dash-bar-bg"><div class="dash-bar-fill" style="width:0%;background:linear-gradient(90deg,#00e5cc,#4d9fff)" data-w="92%"></div></div>
+          <span class="dash-row-val">92%</span>
+        </div>
+        <div class="dash-row">
+          <span class="dash-row-label">Security score</span>
+          <div class="dash-bar-bg"><div class="dash-bar-fill" style="width:0%;background:linear-gradient(90deg,#00d488,#00e5cc)" data-w="87%"></div></div>
+          <span class="dash-row-val">87%</span>
+        </div>
+        <div class="dash-row">
+          <span class="dash-row-label">Forecast accuracy</span>
+          <div class="dash-bar-bg"><div class="dash-bar-fill" style="width:0%;background:linear-gradient(90deg,#f5a623,#ff5c72)" data-w="89%"></div></div>
+          <span class="dash-row-val">89%</span>
+        </div>
+        <div class="dash-row">
+          <span class="dash-row-label">Risk reduction</span>
+          <div class="dash-bar-bg"><div class="dash-bar-fill" style="width:0%;background:linear-gradient(90deg,#4d9fff,#00e5cc)" data-w="78%"></div></div>
+          <span class="dash-row-val">78%</span>
+        </div>
+      </div>
+
+      <div class="dash-footer">
+        <span class="dash-status"><span class="dash-status-dot"></span>All systems operational</span>
+        <span class="dash-updated">Updated just now</span>
+      </div>
+    </div>
+  </div>
+
+  </div><!-- end hero-inner -->
   <div class="hero-stats reveal show">
     <div class="hs"><span class="hs-n">$750</span><span class="hs-l">Starting engagement</span></div><div class="hs"><span class="hs-n">24h</span><span class="hs-l">Response guarantee</span></div><div class="hs"><span class="hs-n">4</span><span class="hs-l">Integrated practice areas</span></div><div class="hs"><span class="hs-n">Global</span><span class="hs-l">Remote client reach</span></div>
   </div>
@@ -378,85 +464,23 @@ h2{
   <div class="tab-panel reveal" id="t-d"><div><p class="svc-intro">Financial strategy that connects numbers to decisions. We help founders, operators, and investors understand performance, risk, valuation, and capital planning.</p><ul class="svc-list"><li class="svc-li"><span class="svc-li-dot"></span><div><div class="svc-li-name">Financial modeling</div><div class="svc-li-desc">DCF, three-statement models, unit economics, and scenario analysis.</div></div></li><li class="svc-li"><span class="svc-li-dot"></span><div><div class="svc-li-name">Investor-ready reporting</div><div class="svc-li-desc">Metrics, dashboards, and financial narratives for fundraising and planning.</div></div></li><li class="svc-li"><span class="svc-li-dot"></span><div><div class="svc-li-name">Portfolio analytics</div><div class="svc-li-desc">Performance, risk, allocation, and forecasting dashboards.</div></div></li><li class="svc-li"><span class="svc-li-dot"></span><div><div class="svc-li-name">Fractional CFO support</div><div class="svc-li-desc">Cash flow, burn rate, planning, and operating rhythm support.</div></div></li></ul><div class="svc-tools"><span class="tool">Excel</span><span class="tool">Python</span><span class="tool">Power BI</span><span class="tool">Valuation</span><span class="tool">Forecasting</span></div></div><div><div class="chart-card"><div class="chart-top"><span class="chart-lbl">Scenario planning visibility</span><div class="chart-leg"><span class="chart-li"><span class="chart-dot" style="background:#f5a623"></span>Upside</span><span class="chart-li"><span class="chart-dot" style="background:#00e5cc"></span>Base</span></div></div><div class="chart-wrap"><canvas id="c4"></canvas></div></div><div class="fit-card"><div class="fit-label">Best fit if you are</div><p class="fit-text">Raising capital, improving financial discipline, evaluating investments, or trying to make your numbers investor-ready.</p></div></div></div>
 </div></section>
 
-<section class="sec dark" id="why"><div class="wrap">
-<div class="reveal" style="position:relative;width:100%;height:240px;overflow:hidden;border-radius:20px;border:1px solid rgba(255,255,255,0.08);margin-bottom:3.5rem">
-  <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=85&fit=crop" alt="Modern workspace" style="width:100%;height:100%;object-fit:cover;filter:grayscale(20%) brightness(0.45)">
-  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,229,204,0.12) 0%,rgba(77,159,255,0.08) 100%)"></div>
-  <div style="position:absolute;inset:0;display:flex;align-items:center;padding:3rem">
-    <div>
-      <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--teal);margin-bottom:0.8rem">Enterprise quality. Boutique access.</div>
-      <div style="font-family:var(--heading);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;color:#fff;line-height:1.1;max-width:600px">Built for teams big firms ignore — but that have the most to gain from sharper intelligence.</div>
-    </div>
-  </div>
-</div>
-<div class="sec-head reveal"><span class="sec-num">02 — Why Aegis</span><h2>Why companies choose <em>Aegis.</em></h2><p class="sec-desc">The strongest value is not a single service. It is the ability to connect technical systems, financial logic, operational decisions, and risk management into one clear strategy.</p></div><div class="why-grid reveal"><div class="why-card"><div class="why-icon">01</div><div class="why-title">Cross-disciplinary intelligence</div><p class="why-text">We combine analytics, AI, finance, and cybersecurity into one strategic framework instead of treating them as disconnected projects.</p></div><div class="why-card"><div class="why-icon">02</div><div class="why-title">Business-first thinking</div><p class="why-text">Every recommendation is tied to decisions, revenue, risk, efficiency, or investor confidence. No vanity dashboards.</p></div><div class="why-card"><div class="why-icon">03</div><div class="why-title">Boutique-level attention</div><p class="why-text">Clients work directly with senior thinkers and builders, not layers of account managers or generic agency processes.</p></div><div class="why-card"><div class="why-icon">04</div><div class="why-title">Global strategic perspective</div><p class="why-text">Experience across U.S. and international markets supports broader insight for companies with ambitious growth plans.</p></div></div></div></div></section>
+<section class="sec dark" id="why"><div class="wrap"><div class="sec-head reveal"><span class="sec-num">02 — Why Aegis</span><h2>Why companies choose <em>Aegis.</em></h2><p class="sec-desc">The strongest value is not a single service. It is the ability to connect technical systems, financial logic, operational decisions, and risk management into one clear strategy.</p></div><div class="why-grid reveal"><div class="why-card"><div class="why-icon">01</div><div class="why-title">Cross-disciplinary intelligence</div><p class="why-text">We combine analytics, AI, finance, and cybersecurity into one strategic framework instead of treating them as disconnected projects.</p></div><div class="why-card"><div class="why-icon">02</div><div class="why-title">Business-first thinking</div><p class="why-text">Every recommendation is tied to decisions, revenue, risk, efficiency, or investor confidence. No vanity dashboards.</p></div><div class="why-card"><div class="why-icon">03</div><div class="why-title">Boutique-level attention</div><p class="why-text">Clients work directly with senior thinkers and builders, not layers of account managers or generic agency processes.</p></div><div class="why-card"><div class="why-icon">04</div><div class="why-title">Global strategic perspective</div><p class="why-text">Experience across U.S. and international markets supports broader insight for companies with ambitious growth plans.</p></div></div></div></section>
 
 <section class="sec" id="case-studies"><div class="wrap"><div class="sec-head reveal"><span class="sec-num">03 — Selected Outcomes</span><h2>Proof-focused work, not <em>empty promises.</em></h2><p class="sec-desc">Examples of operational, analytics, AI, and security-focused engagements designed to improve decision-making, efficiency, and visibility.</p></div><div class="case-grid reveal"><div class="case-card"><div class="case-tag">Healthcare Startup</div><div class="case-title">Automated compliance reporting</div><div class="case-block"><div class="case-label">Problem</div><p class="case-text">Manual reporting workflows and fragmented operational data slowed compliance visibility.</p></div><div class="case-block"><div class="case-label">Solution</div><p class="case-text">Built automated reporting pipelines and executive dashboards for leadership review.</p></div><div class="case-metrics"><div class="cm"><strong>85%</strong><span>Time saved</span></div><div class="cm"><strong>24h</strong><span>Visibility</span></div><div class="cm"><strong>2 wk</strong><span>Audit</span></div></div></div><div class="case-card"><div class="case-tag">E-commerce Brand</div><div class="case-title">Demand and customer intelligence</div><div class="case-block"><div class="case-label">Problem</div><p class="case-text">Unclear inventory demand, inconsistent customer segments, and reactive campaign planning.</p></div><div class="case-block"><div class="case-label">Solution</div><p class="case-text">Created forecasting models, segmentation logic, and dashboard views for growth decisions.</p></div><div class="case-metrics"><div class="cm"><strong>3x</strong><span>Faster read</span></div><div class="cm"><strong>5</strong><span>Segments</span></div><div class="cm"><strong>30d</strong><span>Plan</span></div></div></div><div class="case-card"><div class="case-tag">SaaS Startup</div><div class="case-title">Investor-ready financial dashboard</div><div class="case-block"><div class="case-label">Problem</div><p class="case-text">Founder needed clearer metrics, burn analysis, and growth story before investor conversations.</p></div><div class="case-block"><div class="case-label">Solution</div><p class="case-text">Built a financial model, KPI dashboard, and scenario planning system.</p></div><div class="case-metrics"><div class="cm"><strong>12</strong><span>KPIs</span></div><div class="cm"><strong>3</strong><span>Scenarios</span></div><div class="cm"><strong>1</strong><span>Model</span></div></div></div></div></div></section>
 
 <section class="sec dark" id="clients"><div class="wrap"><div class="sec-head reveal"><span class="sec-num">04 — Best Fit Clients</span><h2>Built for ambitious teams with <em>serious decisions.</em></h2><p class="sec-desc">Aegis is especially useful when the stakes are high, the data is messy, and leadership needs a clearer path forward.</p></div><div class="client-grid reveal"><div class="client-card"><h3>Startups</h3><p>Scaling operations, preparing to raise capital, or building the systems needed for disciplined growth.</p></div><div class="client-card"><h3>Healthcare Companies</h3><p>Needing secure, compliant analytics and reporting systems around sensitive workflows.</p></div><div class="client-card"><h3>E-commerce Brands</h3><p>Looking for demand forecasting, customer segmentation, churn insights, and growth dashboards.</p></div><div class="client-card"><h3>SaaS Businesses</h3><p>Improving product analytics, retention intelligence, investor metrics, and AI-enabled workflows.</p></div><div class="client-card"><h3>Founders</h3><p>Needing financial clarity, strategic dashboards, and decision support before high-stakes moves.</p></div><div class="client-card"><h3>SMBs</h3><p>Wanting automation, better reporting, and stronger security without hiring a full internal team.</p></div></div></div></section>
 
-<section class="sec" id="process"><div class="wrap">
-<div class="reveal" style="margin-bottom:4rem">
-  <div style="position:relative;width:100%;height:280px;overflow:hidden;border-radius:20px;border:1px solid rgba(255,255,255,0.08)">
-    <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=1400&q=85&fit=crop" alt="Strategy session" style="width:100%;height:100%;object-fit:cover;filter:grayscale(20%) brightness(0.55)">
-    <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,229,204,0.15) 0%,rgba(77,159,255,0.1) 50%,transparent 70%)"></div>
-    <div style="position:absolute;bottom:2rem;left:2.5rem">
-      <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem">05 — Process</div>
-      <div style="font-family:var(--heading);font-size:2rem;font-weight:800;color:#fff;line-height:1.1">A clear process from<br><em style="color:var(--teal);font-style:normal">diagnosis to delivery.</em></div>
-    </div>
-  </div>
-  <p style="font-size:1rem;color:var(--soft);font-weight:300;max-width:760px;line-height:1.9;margin-top:1.5rem">Every engagement starts with understanding the decision problem before recommending tools, models, dashboards, or systems.</p>
-</div>
-<div class="process-grid reveal"><div class="proc"><span class="proc-n">01</span><div class="proc-bar"></div><div class="proc-title">Discovery Call</div><p class="proc-desc">A focused conversation to understand your situation, goals, constraints, and urgency.</p><div class="proc-time">Day 1 — Free</div></div><div class="proc"><span class="proc-n">02</span><div class="proc-bar"></div><div class="proc-title">Audit and Scope</div><p class="proc-desc">We assess the data, systems, risks, finances, and operational context behind the problem.</p><div class="proc-time">Weeks 1 to 2</div></div><div class="proc"><span class="proc-n">03</span><div class="proc-bar"></div><div class="proc-title">Build and Deliver</div><p class="proc-desc">We build the dashboards, models, workflows, reports, or security roadmap agreed in scope.</p><div class="proc-time">Weeks 3 to 6</div></div><div class="proc"><span class="proc-n">04</span><div class="proc-bar"></div><div class="proc-title">Monitor and Improve</div><p class="proc-desc">For ongoing clients, we track performance, refine systems, and support better decisions over time.</p><div class="proc-time">Ongoing</div></div></div></div></div></section>
+<section class="sec" id="process"><div class="wrap"><div class="sec-head reveal"><span class="sec-num">05 — Process</span><h2>A clear process from <em>diagnosis to delivery.</em></h2><p class="sec-desc">Every engagement starts with understanding the decision problem before recommending tools, models, dashboards, or systems.</p></div><div class="process-grid reveal"><div class="proc"><span class="proc-n">01</span><div class="proc-bar"></div><div class="proc-title">Discovery Call</div><p class="proc-desc">A focused conversation to understand your situation, goals, constraints, and urgency.</p><div class="proc-time">Day 1 — Free</div></div><div class="proc"><span class="proc-n">02</span><div class="proc-bar"></div><div class="proc-title">Audit and Scope</div><p class="proc-desc">We assess the data, systems, risks, finances, and operational context behind the problem.</p><div class="proc-time">Weeks 1 to 2</div></div><div class="proc"><span class="proc-n">03</span><div class="proc-bar"></div><div class="proc-title">Build and Deliver</div><p class="proc-desc">We build the dashboards, models, workflows, reports, or security roadmap agreed in scope.</p><div class="proc-time">Weeks 3 to 6</div></div><div class="proc"><span class="proc-n">04</span><div class="proc-bar"></div><div class="proc-title">Monitor and Improve</div><p class="proc-desc">For ongoing clients, we track performance, refine systems, and support better decisions over time.</p><div class="proc-time">Ongoing</div></div></div></div></section>
 
-<section class="sec dark" id="industries"><div class="wrap">
-<div class="reveal" style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:4rem;align-items:stretch">
-  <div style="position:relative;overflow:hidden;border-radius:16px;min-height:220px;border:1px solid rgba(255,255,255,0.08)">
-    <img src="https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?w=800&q=80&fit=crop" alt="Global business markets" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(25%) brightness(0.55)">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,12,0.85) 0%,transparent 60%)"></div>
-    <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem">
-      <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.4rem">Global reach</div>
-      <div style="font-size:0.9rem;font-weight:700;color:#fff;line-height:1.4">U.S., Africa, and emerging markets — we understand the nuances of diverse economic contexts.</div>
-    </div>
-  </div>
-  <div style="position:relative;overflow:hidden;border-radius:16px;min-height:220px;border:1px solid rgba(255,255,255,0.08)">
-    <img src="https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&q=80&fit=crop" alt="Tech and finance sectors" style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(25%) brightness(0.55)">
-    <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,12,0.85) 0%,transparent 60%)"></div>
-    <div style="position:absolute;bottom:1.5rem;left:1.5rem;right:1.5rem">
-      <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem">Deep industry experience</div>
-      <div style="font-size:0.9rem;font-weight:700;color:#fff;line-height:1.4">Fintech, healthcare, SaaS, e-commerce — sectors where data, finance, and security intersect.</div>
-    </div>
-  </div>
-</div>
-<div class="sec-head reveal"><span class="sec-num">06 — Industries</span><h2>Where data, money, and risk <em>intersect.</em></h2><p class="sec-desc">We work across sectors, with particular strength where data infrastructure, financial strategy, AI, and security all matter at once.</p></div><div class="ind-grid reveal"><div class="ind-card"><div class="ind-tag">Fintech</div><div class="ind-name">Financial Services</div><p class="ind-desc">Risk models, dashboards, portfolio analytics, and compliance reporting.</p></div><div class="ind-card"><div class="ind-tag">E-commerce</div><div class="ind-name">Retail and E-commerce</div><p class="ind-desc">Demand forecasting, segmentation, churn prediction, and inventory intelligence.</p></div><div class="ind-card"><div class="ind-tag">Healthcare</div><div class="ind-name">Healthcare and Health Tech</div><p class="ind-desc">HIPAA-aware analytics, operational reporting, and secure data workflows.</p></div><div class="ind-card"><div class="ind-tag">SaaS</div><div class="ind-name">SaaS and Tech Startups</div><p class="ind-desc">Product analytics, investor metrics, churn, and AI feature strategy.</p></div><div class="ind-card"><div class="ind-tag">Real Estate</div><div class="ind-name">Real Estate</div><p class="ind-desc">Market analysis, investment modeling, and property performance dashboards.</p></div><div class="ind-card"><div class="ind-tag">Emerging Markets</div><div class="ind-name">Africa and Emerging Markets</div><p class="ind-desc">Market entry analysis, cross-border investment, and expansion intelligence.</p></div><div class="ind-card"><div class="ind-tag">Professional Services</div><div class="ind-name">Consulting and Services</div><p class="ind-desc">Client profitability, capacity planning, and automated reporting.</p></div><div class="ind-card"><div class="ind-tag">Nonprofit</div><div class="ind-name">Nonprofits and NGOs</div><p class="ind-desc">Impact measurement, grant reporting, and donor analytics.</p></div></div></div></div></section>
+<section class="sec dark" id="industries"><div class="wrap"><div class="sec-head reveal"><span class="sec-num">06 — Industries</span><h2>Where data, money, and risk <em>intersect.</em></h2><p class="sec-desc">We work across sectors, with particular strength where data infrastructure, financial strategy, AI, and security all matter at once.</p></div><div class="ind-grid reveal"><div class="ind-card"><div class="ind-tag">Fintech</div><div class="ind-name">Financial Services</div><p class="ind-desc">Risk models, dashboards, portfolio analytics, and compliance reporting.</p></div><div class="ind-card"><div class="ind-tag">E-commerce</div><div class="ind-name">Retail and E-commerce</div><p class="ind-desc">Demand forecasting, segmentation, churn prediction, and inventory intelligence.</p></div><div class="ind-card"><div class="ind-tag">Healthcare</div><div class="ind-name">Healthcare and Health Tech</div><p class="ind-desc">HIPAA-aware analytics, operational reporting, and secure data workflows.</p></div><div class="ind-card"><div class="ind-tag">SaaS</div><div class="ind-name">SaaS and Tech Startups</div><p class="ind-desc">Product analytics, investor metrics, churn, and AI feature strategy.</p></div><div class="ind-card"><div class="ind-tag">Real Estate</div><div class="ind-name">Real Estate</div><p class="ind-desc">Market analysis, investment modeling, and property performance dashboards.</p></div><div class="ind-card"><div class="ind-tag">Emerging Markets</div><div class="ind-name">Africa and Emerging Markets</div><p class="ind-desc">Market entry analysis, cross-border investment, and expansion intelligence.</p></div><div class="ind-card"><div class="ind-tag">Professional Services</div><div class="ind-name">Consulting and Services</div><p class="ind-desc">Client profitability, capacity planning, and automated reporting.</p></div><div class="ind-card"><div class="ind-tag">Nonprofit</div><div class="ind-name">Nonprofits and NGOs</div><p class="ind-desc">Impact measurement, grant reporting, and donor analytics.</p></div></div></div></section>
 
 <div class="tools-band"><div class="wrap reveal"><div class="tools-label">Tools and technologies</div><div class="tools-row"><span class="tool-chip">Python</span><span class="tool-chip">SQL</span><span class="tool-chip">R</span><span class="tool-chip">Power BI</span><span class="tool-chip">Tableau</span><span class="tool-chip">Looker</span><span class="tool-chip">dbt</span><span class="tool-chip">Snowflake</span><span class="tool-chip">BigQuery</span><span class="tool-chip">AWS</span><span class="tool-chip">GCP</span><span class="tool-chip">Azure</span><span class="tool-chip">PyTorch</span><span class="tool-chip">scikit-learn</span><span class="tool-chip">OpenAI API</span><span class="tool-chip">MLflow</span><span class="tool-chip">Airflow</span><span class="tool-chip">Nessus</span><span class="tool-chip">Burp Suite</span><span class="tool-chip">Splunk</span><span class="tool-chip">Excel</span><span class="tool-chip">Google Sheets</span></div></div></div>
 
-<section class="sec" id="founder"><div class="wrap founder-wrap reveal"><div class="founder-photo" style="position:relative;overflow:hidden">
-  <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=85&fit=crop&crop=faces" 
-    alt="Aegis Analytics Founder" 
-    style="width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%) brightness(0.8)">
-  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(5,7,12,0.7) 0%,transparent 50%)"></div>
-  <div style="position:absolute;bottom:1.5rem;left:1.5rem">
-    <div style="font-size:0.6rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.3rem">Founder &amp; Principal</div>
-    <div style="font-family:var(--heading);font-size:1.1rem;font-weight:800;color:#fff">Aegis Analytics</div>
-  </div>
-</div><div class="founder-copy"><span class="sec-num">07 — Leadership</span><h2>Built for businesses making high-stakes decisions.</h2><p>Aegis Analytics was created to help businesses use data, financial intelligence, AI systems, and cybersecurity strategy to make higher-quality decisions with confidence.</p><p>The firm is designed for founders and teams who need clarity, not noise. Every engagement starts with the business decision first, then the data, model, dashboard, or security system required to support it.</p><div class="expertise"><span>Data Strategy</span><span>AI Systems</span><span>Financial Modeling</span><span>Risk Analysis</span><span>Cybersecurity Readiness</span></div></div></div></section>
+<section class="sec" id="founder"><div class="wrap founder-wrap reveal"><div class="founder-photo"><div class="founder-placeholder"><strong>Founder</strong><span>Add professional photo here</span></div></div><div class="founder-copy"><span class="sec-num">07 — Leadership</span><h2>Built for businesses making high-stakes decisions.</h2><p>Aegis Analytics was created to help businesses use data, financial intelligence, AI systems, and cybersecurity strategy to make higher-quality decisions with confidence.</p><p>The firm is designed for founders and teams who need clarity, not noise. Every engagement starts with the business decision first, then the data, model, dashboard, or security system required to support it.</p><div class="expertise"><span>Data Strategy</span><span>AI Systems</span><span>Financial Modeling</span><span>Risk Analysis</span><span>Cybersecurity Readiness</span></div></div></div></section>
 
-<section class="sec dark" id="finance"><div class="wrap">
-<div class="reveal" style="position:relative;width:100%;height:220px;overflow:hidden;border-radius:20px;border:1px solid rgba(245,166,35,0.15);margin-bottom:3.5rem">
-  <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1400&q=85&fit=crop" alt="Financial charts and investment" style="width:100%;height:100%;object-fit:cover;filter:grayscale(15%) brightness(0.45)">
-  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(245,166,35,0.15) 0%,transparent 60%)"></div>
-  <div style="position:absolute;inset:0;display:flex;align-items:center;padding:3rem">
-    <div>
-      <div style="font-size:0.65rem;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem">08 — Financial Services</div>
-      <div style="font-family:var(--heading);font-size:clamp(1.4rem,3vw,2.2rem);font-weight:800;color:#fff;line-height:1.1">Investment strategy backed by <span style="color:var(--gold)">analytical discipline.</span></div>
-    </div>
-  </div>
-</div>
-<div class="sec-head reveal"><span class="sec-num" style="color:rgba(245,166,35,.75)">08 — Finance</span><h2>Financial services with <em style="color:var(--gold)">analytical discipline.</em></h2><p class="sec-desc">Our finance background is a core differentiator. We bring institutional analytical rigor to founders, investors, and growing businesses that need stronger financial clarity.</p></div><div class="fin-grid reveal"><div class="fin-card"><div class="fin-id">F.01</div><div class="fin-title">Investment Analysis</div><p class="fin-desc">Data-driven evaluation of equities, funds, and alternative assets using risk-aware modeling.</p><div class="fin-tags"><span class="fin-tag">Equity Research</span><span class="fin-tag">Risk Modeling</span></div></div><div class="fin-card"><div class="fin-id">F.02</div><div class="fin-title">Financial Modeling</div><p class="fin-desc">Three-statement models, DCF valuation, scenario analysis, and operating models.</p><div class="fin-tags"><span class="fin-tag">DCF</span><span class="fin-tag">Scenario Analysis</span></div></div><div class="fin-card"><div class="fin-id">F.03</div><div class="fin-title">Fractional CFO Support</div><p class="fin-desc">Unit economics, cash flow planning, burn analysis, and investor-ready narratives.</p><div class="fin-tags"><span class="fin-tag">Cash Flow</span><span class="fin-tag">Burn Rate</span></div></div><div class="fin-card"><div class="fin-id">F.04</div><div class="fin-title">Emerging Market Analysis</div><p class="fin-desc">Market entry, cross-border investment, and growth strategy for international markets.</p><div class="fin-tags"><span class="fin-tag">Africa Markets</span><span class="fin-tag">Expansion</span></div></div><div class="fin-card"><div class="fin-id">F.05</div><div class="fin-title">Portfolio Reporting Dashboards</div><p class="fin-desc">Live dashboards for performance, allocation, risk, and investor communication.</p><div class="fin-tags"><span class="fin-tag">Dashboards</span><span class="fin-tag">Performance</span></div></div><div class="fin-card"><div class="fin-id">F.06</div><div class="fin-title">Financial Literacy Workshops</div><p class="fin-desc">Founder-focused workshops on financial statements, valuation, and better money decisions.</p><div class="fin-tags"><span class="fin-tag">Workshops</span><span class="fin-tag">Founders</span></div></div></div><div class="fin-note reveal"><p><strong>Note:</strong> Aegis Analytics provides analytical and strategic support, not licensed investment advice. For regulated advice, we can coordinate with licensed professionals.</p></div></div></div></section>
+<section class="sec dark" id="finance"><div class="wrap"><div class="sec-head reveal"><span class="sec-num" style="color:rgba(245,166,35,.75)">08 — Finance</span><h2>Financial services with <em style="color:var(--gold)">analytical discipline.</em></h2><p class="sec-desc">Our finance background is a core differentiator. We bring institutional analytical rigor to founders, investors, and growing businesses that need stronger financial clarity.</p></div><div class="fin-grid reveal"><div class="fin-card"><div class="fin-id">F.01</div><div class="fin-title">Investment Analysis</div><p class="fin-desc">Data-driven evaluation of equities, funds, and alternative assets using risk-aware modeling.</p><div class="fin-tags"><span class="fin-tag">Equity Research</span><span class="fin-tag">Risk Modeling</span></div></div><div class="fin-card"><div class="fin-id">F.02</div><div class="fin-title">Financial Modeling</div><p class="fin-desc">Three-statement models, DCF valuation, scenario analysis, and operating models.</p><div class="fin-tags"><span class="fin-tag">DCF</span><span class="fin-tag">Scenario Analysis</span></div></div><div class="fin-card"><div class="fin-id">F.03</div><div class="fin-title">Fractional CFO Support</div><p class="fin-desc">Unit economics, cash flow planning, burn analysis, and investor-ready narratives.</p><div class="fin-tags"><span class="fin-tag">Cash Flow</span><span class="fin-tag">Burn Rate</span></div></div><div class="fin-card"><div class="fin-id">F.04</div><div class="fin-title">Emerging Market Analysis</div><p class="fin-desc">Market entry, cross-border investment, and growth strategy for international markets.</p><div class="fin-tags"><span class="fin-tag">Africa Markets</span><span class="fin-tag">Expansion</span></div></div><div class="fin-card"><div class="fin-id">F.05</div><div class="fin-title">Portfolio Reporting Dashboards</div><p class="fin-desc">Live dashboards for performance, allocation, risk, and investor communication.</p><div class="fin-tags"><span class="fin-tag">Dashboards</span><span class="fin-tag">Performance</span></div></div><div class="fin-card"><div class="fin-id">F.06</div><div class="fin-title">Financial Literacy Workshops</div><p class="fin-desc">Founder-focused workshops on financial statements, valuation, and better money decisions.</p><div class="fin-tags"><span class="fin-tag">Workshops</span><span class="fin-tag">Founders</span></div></div></div><div class="fin-note reveal"><p><strong>Note:</strong> Aegis Analytics provides analytical and strategic support, not licensed investment advice. For regulated advice, we can coordinate with licensed professionals.</p></div></div></section>
 
-<section class="lead" id="lead"><div class="lead-box reveal"><div><div class="kicker">Free Resource</div><h2>Get the free data readiness checklist.</h2><p>Not ready to book a call yet? Start here. Download our plain-language checklist to see exactly where your data, security, and financial systems stand today.</p></div><form class="lead-form" action="#" onsubmit="event.preventDefault();alert('Connect this form to your email platform or CRM.');"><input type="email" placeholder="your@email.com" required><button type="submit">Get Checklist</button></form></div></section>
+<section class="lead" id="lead"><div class="lead-box reveal"><div><div class="kicker">Free Resource</div><h2>Get the free data readiness checklist.</h2><p>Not ready to book yet? Download our plain-language checklist to see exactly where your data, security, and financial systems stand today.</p></div><form class="lead-form" action="#" onsubmit="event.preventDefault();alert('Connect this form to your email platform or CRM.');"><input type="email" placeholder="your@email.com" required><button type="submit">Get Checklist</button></form></div></section>
 
 <section class="sec" id="pricing"><div class="wrap"><div class="sec-head reveal"><span class="sec-num">09 — Pricing</span><h2>Simple entry points for <em>serious work.</em></h2><p class="sec-desc">Every engagement starts with a conversation and a clear scope. We will tell you honestly whether we are the right fit before you spend a dollar.</p></div><div class="price-grid reveal"><div class="p-card"><div class="p-tier">Starter</div><div class="p-name">Discovery Sprint</div><p class="p-desc">A focused audit with a clear action plan in two weeks.</p><div class="p-price">$750</div><div class="p-per">One-time · 2-week delivery</div><div class="p-line"></div><ul class="p-feats"><li>1-hour kickoff call</li><li>Audit of current setup</li><li>Plain-language findings</li><li>Prioritized action roadmap</li><li>Review call</li></ul><button class="p-btn" onclick="scrollToId('contact')">Get Started</button></div><div class="p-card feat"><div class="p-tier">Growth</div><div class="p-name">Project Engagement</div><p class="p-desc">A scoped project with a defined, measurable deliverable.</p><div class="p-price">$2,500+</div><div class="p-per">Per project · scope-dependent</div><div class="p-line"></div><ul class="p-feats"><li>Discovery included</li><li>Custom deliverable</li><li>Testing and QA</li><li>Documentation</li><li>30 days follow-up support</li></ul><button class="p-btn" onclick="scrollToId('contact')">Book a Call</button></div><div class="p-card"><div class="p-tier">Scale</div><div class="p-name">Monthly Retainer</div><p class="p-desc">Ongoing access across all practice areas as you grow.</p><div class="p-price">$1,000</div><div class="p-per">Per month · cancel anytime</div><div class="p-line"></div><ul class="p-feats"><li>Up to 10 hours monthly</li><li>Priority response</li><li>Monthly strategy check-in</li><li>Covers all practice areas</li><li>Scales with needs</li></ul><button class="p-btn" onclick="scrollToId('contact')">Let's Talk</button></div></div><div class="price-note reveal">Every engagement starts with a conversation, not a proposal. We will tell you honestly whether we are the right fit before you spend a dollar.</div></div></section>
 
@@ -472,7 +496,44 @@ function scrollToId(id){document.getElementById(id).scrollIntoView({behavior:'sm
 const revealEls=document.querySelectorAll('.reveal');const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');obs.unobserve(e.target);}})},{threshold:.12});revealEls.forEach(el=>obs.observe(el));
 let drawn={};function chartOptions(min,max){return{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false,min:min,max:max}},elements:{point:{radius:0},line:{tension:.42,borderWidth:2.5}}};}
 function drawChart(id){if(drawn[id]||typeof Chart==='undefined')return;drawn[id]=true;let el=document.getElementById('c'+({a:1,b:2,c:3,d:4}[id]));if(!el)return;if(id==='a'){new Chart(el,{type:'line',data:{labels:['J','F','M','A','M','J','J','A','S','O','N','D'],datasets:[{data:[42,44,43,50,58,66,74,82,88,94,99,105],borderColor:'#00e5cc',backgroundColor:'rgba(0,229,204,.08)',fill:true},{data:[42,43,44,44,45,45,46,46,47,47,48,48],borderColor:'#38475c',borderDash:[6,5],fill:false}]},options:chartOptions(35,112)});}if(id==='b'){new Chart(el,{type:'line',data:{labels:['1','2','3','4','5','6','7','8'],datasets:[{data:[58,65,72,78,83,87,90,92],borderColor:'#00e5cc',backgroundColor:'rgba(0,229,204,.08)',fill:true},{data:[80,80,80,80,80,80,80,80],borderColor:'#f5a623',borderDash:[6,5],fill:false}]},options:chartOptions(40,100)});}if(id==='c'){new Chart(el,{type:'line',data:{labels:['1','2','3','4','5','6','7','8'],datasets:[{data:[92,83,74,60,51,39,30,22],borderColor:'#ff5c72',backgroundColor:'rgba(255,92,114,.08)',fill:true},{data:[35,35,35,35,35,35,35,35],borderColor:'#00e5cc',borderDash:[6,5],fill:false}]},options:chartOptions(15,100)});}if(id==='d'){new Chart(el,{type:'line',data:{labels:['Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8'],datasets:[{data:[40,46,53,61,72,83,93,104],borderColor:'#f5a623',backgroundColor:'rgba(245,166,35,.08)',fill:true},{data:[40,44,48,55,62,70,78,87],borderColor:'#00e5cc',backgroundColor:'rgba(0,229,204,.04)',fill:true}]},options:chartOptions(30,110)});}}
-function switchTab(id,btn){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));document.getElementById('t-'+id).classList.add('on');btn.classList.add('on');drawChart(id);}window.addEventListener('load',()=>drawChart('a'));
+function switchTab(id,btn){document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('on'));document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('on'));document.getElementById('t-'+id).classList.add('on');btn.classList.add('on');drawChart(id);}window.addEventListener('load',()=>{drawChart('a');initHeroDash();});
+
+function initHeroDash(){
+  // Draw hero chart
+  var hc=document.getElementById('hero-chart');
+  if(hc&&typeof Chart!=='undefined'){
+    new Chart(hc,{type:'line',data:{
+      labels:['J','F','M','A','M','J','J','A','S','O','N','D'],
+      datasets:[
+        {data:[42,45,43,50,59,68,75,83,89,95,100,107],borderColor:'#00e5cc',backgroundColor:'rgba(0,229,204,0.08)',fill:true,tension:0.45,borderWidth:2.5,pointRadius:0},
+        {data:[42,43,44,44,45,45,46,46,47,47,48,48],borderColor:'rgba(77,159,255,0.4)',borderDash:[5,4],fill:false,tension:0.4,borderWidth:1.5,pointRadius:0}
+      ]
+    },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{enabled:false}},scales:{x:{display:false},y:{display:false,min:35,max:115}}}});
+  }
+
+  // Animate bars
+  setTimeout(function(){
+    document.querySelectorAll('.dash-bar-fill').forEach(function(bar){
+      bar.style.width = bar.getAttribute('data-w');
+    });
+  }, 600);
+
+  // Animate metric numbers slightly to feel live
+  var metrics = [
+    {id:'dm1', base:91.4, suffix:'%', prefix:'+', color:'up'},
+    {id:'dm2', base:62, suffix:'%', prefix:'-', color:'down'},
+    {id:'dm3', base:18.3, suffix:'%', prefix:'+', color:'gold'}
+  ];
+  setInterval(function(){
+    metrics.forEach(function(m){
+      var el=document.getElementById(m.id);
+      if(!el)return;
+      var variance=(Math.random()-0.5)*0.4;
+      var val=(m.base+variance).toFixed(1);
+      el.textContent=m.prefix+val+m.suffix;
+    });
+  }, 2800);
+}
 </script>
 </body>
 </html>
